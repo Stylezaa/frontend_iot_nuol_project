@@ -4,10 +4,10 @@ export default function SidebarComponent() {
     //bi bi-caret-left-fill
   const [open, setOpen] = React.useState(true);
   const Menus = [
-    { title: 'Overview', icon: 'overviews', url: '/overview' },
-    { title: 'Sensor', icon: 'overviews', url: '/sensor', gap: true },
-    { title: 'Map', icon: 'overviews', url: '/map' },
-    { title: 'Setting', icon: 'overviews', url: '/setting' },
+    { title: 'Overview', icon: 'overviews', url: '/dashboard/overview' },
+    { title: 'Sensor', icon: 'overviews', url: '/dashboard/sensor', gap: true },
+    { title: 'Map', icon: 'overviews', url: '/dashboard/map' },
+    { title: 'Setting', icon: 'overviews', url: '/dashboard/setting' },
   ];
 
   return (

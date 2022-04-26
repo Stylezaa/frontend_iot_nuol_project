@@ -4,9 +4,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import PrivateRoute from './Guard/auth';
 import './index.css';
 import App from './App';
+import Home from './Pages/Home'
+import Map from './Pages/Map'
+import Sensor from './Pages/Sensor'
+import About from './Pages/About'
 import Overview from './Pages/Admin/Overviews'
-import Sensor from './Pages/Admin/Sensor'
-import Map from './Pages/Admin/Map'
+import SensorDash from './Pages/Admin/Sensor'
+import MapDash from './Pages/Admin/Map'
 import Setting from './Pages/Admin/Setting'
 import Login from './Pages/Login'
 
@@ -15,18 +19,27 @@ root.render(
   <Router>
     <Switch>
       <Route path="/" exact>
-        <App />
+        <Home />
       </Route>
-      <PrivateRoute path="/overview" exact>
+      <Route path="/map" exact>
+        <Map />
+      </Route>
+      <Route path="/sensor" exact>
+        <Sensor />
+      </Route>
+      <Route path="/about" exact>
+        <About />
+      </Route>
+      <PrivateRoute path="/dashboard/overview" exact>
         <Overview />
       </PrivateRoute>
-      <PrivateRoute path="/sensor" exact>
-        <Sensor />
+      <PrivateRoute path="/dashboard/sensor" exact>
+        <SensorDash />
       </PrivateRoute>
-      <PrivateRoute path="/map" exact>
-        <Map />
+      <PrivateRoute path="/dashboard/map" exact>
+        <MapDash />
       </PrivateRoute>
-      <PrivateRoute path="/setting" exact>
+      <PrivateRoute path="/dashboard/setting" exact>
         <Setting />
       </PrivateRoute>
       <Route path="/login" exact>

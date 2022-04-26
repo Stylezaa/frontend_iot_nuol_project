@@ -3,12 +3,14 @@ import React from 'react'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import ProfileControl from '../Components/Admin/profileControl'
+
 
 const navigation = [
-  { name: 'Overviews', href: '/#' },
-  { name: 'Map', href: '/#' },
-  { name: 'Sensors', href: '/#' },
-  { name: 'About Team', href: '/#' },
+  { name: 'Overviews', href: '/' },
+  { name: 'Map', href: '/map' },
+  { name: 'Sensors', href: '/sensor' },
+  { name: 'About Team', href: '/about' },
 ]
 
 export default function Header() {
@@ -40,7 +42,7 @@ export default function Header() {
               <nav className="relative flex items-center justify-between sm:h-10 lg:justify-between" aria-label="Global">
                 <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                   <div className="flex items-center justify-between w-full md:w-auto">
-                    <a href="#">
+                    <a href="/">
                       <span className="sr-only">Workflow</span>
                       <img
                         className="h-8 w-auto sm:h-10"
@@ -55,7 +57,7 @@ export default function Header() {
                     </div>
                   </div>
                 </div>
-                <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+                <div className="hidden md:flex items-center md:ml-10 md:pr-4 md:space-x-8">
                   {navigation.map((item) => (
                     <a key={item.name} href={item.href} className="font-medium text-neutral-900  hover:text-gray-900 transition duration-300 ease-in-out hover:underline">
                       {item.name}
@@ -64,9 +66,7 @@ export default function Header() {
                   {isAuth
                     ? 
                     <>
-                      <a href="/overview" className="font-medium w-10 bg-sky-600 hover:bg-sky-700 text-white hover:text-gray-50 px-4 py-2 rounded cursor-pointer">
-                        Dashboard
-                      </a>
+                      <ProfileControl link="/dashboard/overview" title="Dashboard" />
                     </>
                     : 
                     <>
@@ -75,7 +75,6 @@ export default function Header() {
                       </a>
                     </>
                   }
-                  
                 </div>
               </nav>
             </div>
@@ -91,7 +90,7 @@ export default function Header() {
             >
               <Popover.Panel
                 focus
-                className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+                className="absolute z-50 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
               >
                 <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                   <div className="px-5 pt-4 flex items-center justify-between">

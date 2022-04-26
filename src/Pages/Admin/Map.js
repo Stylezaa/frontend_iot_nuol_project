@@ -1,6 +1,7 @@
 import * as React from 'react';
 import SidebarComponent from '../../Components/Admin/SidebarComponent'
 import BarComponent from '../../Components/Admin/BarComponent'
+import MapComponent from '../../Components/MapComponent'
 
 export default function DashboardContent() {
 
@@ -15,6 +16,9 @@ export default function DashboardContent() {
             <li>/</li>
             <li className="font-medium text-black">Map Page</li>
           </ul>
+        </div>
+        <div className="container mx-auto">
+          <MapComponent />
         </div>
       </div>
     </div>

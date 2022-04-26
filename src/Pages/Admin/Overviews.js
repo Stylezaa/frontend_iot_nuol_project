@@ -1,7 +1,8 @@
 import * as React from 'react';
 import SidebarComponent from '../../Components/Admin/SidebarComponent'
 import BarComponent from '../../Components/Admin/BarComponent'
-import SensorComponent from '../../Components/SensorComponent';
+// import SensorComponent from '../../Components/SensorComponent';
+import NumberDataComponent from '../../Components/Chart/NumberDataComponent'
 
 export default function DashboardContent() {
 
@@ -17,7 +18,9 @@ export default function DashboardContent() {
             <li className="font-medium text-black">Overview Page</li>
           </ul>
         </div>
-        <SensorComponent />
+        <div className="container mx-auto">
+          <NumberDataComponent />
+        </div>
       </div>
     </div>
   );

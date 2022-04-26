@@ -5,9 +5,9 @@ export default function SidebarComponent() {
   const [open, setOpen] = React.useState(true);
   const Menus = [
     { title: 'Overview', icon: 'overviews', url: '/dashboard/overview' },
-    { title: 'Sensor', icon: 'overviews', url: '/dashboard/sensor', gap: true },
-    { title: 'Map', icon: 'overviews', url: '/dashboard/map' },
-    { title: 'Setting', icon: 'overviews', url: '/dashboard/setting' },
+    { title: 'Sensor', icon: 'water', url: '/dashboard/sensor', gap: true },
+    { title: 'Map', icon: 'pin', url: '/dashboard/map' },
+    { title: 'Setting', icon: 'setting', url: '/dashboard/setting' },
   ];
 
   return (
@@ -15,16 +15,18 @@ export default function SidebarComponent() {
       <div
         className={`${
           open ? 'w-72' : 'w-20'
-        } duration-300 h-screen p-5 pt-8 bg-blue-600 relative`}
+        } duration-300 h-screen p-5 pt-8 relative`}
+        style={{ backgroundColor: "#0a1936"}}
       >
         <svg
           onClick={() => setOpen(!open)}
-          className={`bi bi-chevron-double-right absolute cursor-pointer rounded-full -right-3 top-9 text-blue-600 w-7 font-medium border-2 bg-white border-blue-600 ${
+          className={`bi bi-chevron-double-right absolute cursor-pointer rounded-full -right-3 top-9 w-7 font-medium border-2 bg-white border-blue-600 ${
             !open && "rotate-180"
           }`}
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
           viewBox="0 0 16 16"
+          style={{color: "#0a1936", borderColor: "#0a1936"}}
         >
           <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
         </svg>
@@ -52,7 +54,7 @@ export default function SidebarComponent() {
             <a href={Menu.url}>
               <li
                 key={index}
-                className={`text-gray-50 duration-100 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-700 hover:text-white rounded-md ${
+                className={`text-gray-50 duration-100 flex items-center gap-x-4 cursor-pointer border-b border-slate-600 p-2 hover:bg-blue-700 hover:text-white ${
                   Menu.gap ? 'mt-4' : 'mt-2'
                 } ${index === 0 && 'bg-light-white'}`}
               >
@@ -64,7 +66,7 @@ export default function SidebarComponent() {
                 <span
                   className={`${
                     !open && 'hidden'
-                  } text-xl origin-left duration-300`}
+                  } text-xl origin-left duration-300 text-sm`}
                 >
                   {Menu.title}
                 </span>

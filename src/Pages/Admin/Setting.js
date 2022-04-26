@@ -1,6 +1,7 @@
 import * as React from 'react';
 import SidebarComponent from '../../Components/Admin/SidebarComponent'
 import BarComponent from '../../Components/Admin/BarComponent'
+import DataGridComponent from '../../Components/DataGridComponent'
 
 export default function DashboardContent() {
 
@@ -15,6 +16,9 @@ export default function DashboardContent() {
             <li>/</li>
             <li className="font-medium text-black">Setting Page</li>
           </ul>
+        </div>
+        <div className="container mx-auto">
+          <DataGridComponent />
         </div>
       </div>
     </div>

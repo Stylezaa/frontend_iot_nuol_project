@@ -20,6 +20,9 @@
     "axios": "^0.26.1",
     "leaflet": "^1.8.0",
     "moment": "^2.29.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-leaflet": "^4.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "recharts": "^2.1.9",
@@ -38,18 +41,11 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "autoprefixer": "^10.4.4",
     "postcss": "^8.4.12",

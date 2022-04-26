@@ -28,13 +28,6 @@ export default function ProfileControl(props) {
 
   return (
     <>
-        {/* <button
-          className="block w-full px-5 py-2 w-24 text-center font-medium text-white bg-red-600 hover:bg-red-700 rounded"
-          onClick={logout}
-        >
-          Logout
-        </button> */}
-
         <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}

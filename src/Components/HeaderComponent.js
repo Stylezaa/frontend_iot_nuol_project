@@ -24,7 +24,7 @@ export default function Header() {
   }
 
   return (
-    <div className="relative bg-white drop-shadow-md">
+    <div className="relative bg-white drop-shadow">
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10 pb-4 bg-white  lg:w-full">
           <svg
@@ -34,7 +34,7 @@ export default function Header() {
             preserveAspectRatio="none"
             aria-hidden="true"
           >
-            <polygon points="50,0 100,0 50,100 0,100" />
+            {/* <polygon points="50,0 100,0 50,100 0,100" /> */}
           </svg>
 
           <Popover>
@@ -47,6 +47,7 @@ export default function Header() {
                       <img
                         className="h-8 w-auto sm:h-10"
                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                        alt=''
                       />
                     </a>
                     <div className="-mr-2 flex items-center md:hidden">

@@ -8,8 +8,12 @@ function Home() {
   return (
     <>
         <Header />
-        <MapComponent />
-        <DataGridComponent />
+        <div className="container mx-auto my-2 max-w-7xl px-6">
+          <div className="pb-5">
+            <MapComponent />
+          </div>
+          <DataGridComponent />
+        </div>
         <Footer />
     </>
   )

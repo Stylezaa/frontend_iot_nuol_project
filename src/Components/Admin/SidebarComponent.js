@@ -54,7 +54,7 @@ export default function SidebarComponent() {
             <a href={Menu.url}>
               <li
                 key={index}
-                className={`text-gray-50 duration-100 flex items-center gap-x-4 cursor-pointer border-b border-slate-600 p-2 hover:bg-blue-700 hover:text-white ${
+                className={`text-gray-50 transition ease-in-out duration-200 flex items-center gap-x-4 cursor-pointer border-b border-slate-600 p-2 hover:bg-sky-600 hover:text-white ${
                   Menu.gap ? 'mt-4' : 'mt-2'
                 } ${index === 0 && 'bg-light-white'}`}
               >

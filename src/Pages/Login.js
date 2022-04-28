@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import axios from 'axios';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -72,7 +72,13 @@ export default function SignIn() {
 
       console.log(respProfile.data.user);
     } catch (error) {
-      console.log(error.response.data.error.message);
+      // return (
+      //   <Stack spacing={2} sx={{ width: '100%' }}>
+      //     <Alert severity="error">{error.response.data.error.message}</Alert>
+      //   </Stack>
+      // )
+      alert(error.response.data.error.message)
+
     }
   };
 

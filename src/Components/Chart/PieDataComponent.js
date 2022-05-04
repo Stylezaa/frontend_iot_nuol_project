@@ -15,7 +15,7 @@ function PieDataComponent() {
 
     const getSensor = async () => {
         try {
-          const resp = await axios.get('http://localhost:8000/api/sensor');
+          const resp = await axios.get('http://localhost:8000/api/sensor/1');
           setlastData(resp.data[0]);
         } catch (error) {
           console.log(error)

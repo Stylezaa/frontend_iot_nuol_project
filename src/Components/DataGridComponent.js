@@ -42,7 +42,7 @@ export default function DataGridComponent() {
 
   const getSensor = async () => {
     try {
-    const resp = await axios.get('http://localhost:8000/api/sensor/all');
+    const resp = await axios.get('http://localhost:8000/api/sensor/1/all');
     setTableData(resp.data);
     } catch (error) {
     console.log(error)

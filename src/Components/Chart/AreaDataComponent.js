@@ -18,7 +18,7 @@ function AreaDataComponent() {
 
     const getSensor = async () => {
         try {
-        const resp = await axios.get('http://localhost:8000/api/sensor');
+        const resp = await axios.get('http://localhost:8000/api/sensor/1');
         getAllData(resp.data);
         } catch (error) {
         console.log(error)

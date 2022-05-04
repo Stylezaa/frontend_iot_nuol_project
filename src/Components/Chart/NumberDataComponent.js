@@ -8,7 +8,7 @@ function NumberDataComponent() {
 
   const getSensor = async () => {
     try {
-      const resp = await axios.get('http://localhost:8000/api/sensor');
+      const resp = await axios.get('http://localhost:8000/api/sensor/1');
       setLastData(resp.data[0]);
     } catch (error) {
       console.log(error)

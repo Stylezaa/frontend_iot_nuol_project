@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PrivateRoute from './Guard/auth';
 import './index.css';
-import Home from './Pages/Home'
+import MapComponent from './Components/Map/MapComponent'
+// import Home from './Pages/Home'
 import Map from './Pages/Map'
 import Sensor from './Pages/Sensor'
 import About from './Pages/About'
@@ -18,7 +19,8 @@ root.render(
   <Router>
     <Switch>
       <Route path="/" exact>
-        <Home />
+        {/* <Home /> */}
+        <MapComponent />
       </Route>
       <Route path="/map" exact>
         <Map />

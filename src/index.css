@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .selected {
+        color: #fff;
+        background-color: #000 !important;
+    }
+}

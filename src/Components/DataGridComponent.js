@@ -27,6 +27,8 @@ export default function DataGridComponent() {
     maxColumns: 6,
   });
 
+  console.log(data)
+
   const [tableData, setTableData] = React.useState([])
   // const [dateTime, setDateTime] = useState([]);
 

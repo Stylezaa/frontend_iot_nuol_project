@@ -15,7 +15,7 @@ function ProfileComponent() {
             {isAuth
                     ? 
                     <>
-                      <ProfileControl link="/" title="Dashboard" />
+                      <ProfileControl link="/dashboard/overview" title="Dashboard" />
                     </>
                     : 
                     <>

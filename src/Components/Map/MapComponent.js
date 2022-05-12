@@ -40,6 +40,7 @@ function MapComponent() {
 		Axios.get(api).then(response => {
 			const sortedLocations = sortedLocationArray(response.data.station_list);
 			setLocationArray(sortedLocations);
+			// console.log(sortedLocations)
 		}).catch(error => {
 			console.log(error);
 		})

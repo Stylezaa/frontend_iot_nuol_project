@@ -1,4 +1,5 @@
 import React from 'react';
+import BarDataComponent from '../Chart/BarDataComponent'
 
 const totalKeyArray = ['pH', 'DO', 'EC'];
 
@@ -15,7 +16,7 @@ function DetailsView(props) {
 
     const totalElements = totalKeyArray.map(key => {
         const count = latest[key];
-        console.log(count)
+        // console.log(count)
         return (
             <div key={key} className="grid grid-cols-2">
                 <div className="">
@@ -34,6 +35,7 @@ function DetailsView(props) {
             <div className="details-view-content">
                 <h4 className="title is-4">{title}</h4>
                 {totalElements}
+                <BarDataComponent />
             </div>
         </div>
     );

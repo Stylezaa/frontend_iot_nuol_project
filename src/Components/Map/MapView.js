@@ -12,13 +12,15 @@ import { divIcon } from 'leaflet';
 7. 50000 up => red, super very big
 */
 const icons = {
-    // xxSmall: divIcon({className: 'marker-icon pink', iconSize: [12, 12]}),
-    // xSmall: divIcon({className: 'marker-icon pink', iconSize: [16, 16]}),
-    // small: divIcon({className: 'marker-icon pink', iconSize: [24, 24]}),
-    // normal: divIcon({className: 'marker-icon purple', iconSize: [32, 32]}),
-	// large: divIcon({className: 'marker-icon purple', iconSize: [48, 48]}),
-	// xLarge: divIcon({className: 'marker-icon red', iconSize: [72, 72]}),
-	xxLarge: divIcon({className: 'border border-solid rounded-full bg-rose-300/50 border-rose-500', iconSize: [96, 96]})
+    // xxSmall: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [12, 12]}),
+    // xSmall: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [16, 16]}),
+    // small: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [24, 24]}),
+    // normal: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [32, 32]}),
+	// large: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [48, 48]}),
+	// xLarge: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [72, 72]}),
+	xxLarge: divIcon({className: 
+        'border border-solid rounded-full bg-blue-300/10 border-blue-500',
+         iconSize: [96, 96]})
 };
 
 function MapView(props) {

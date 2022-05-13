@@ -15,11 +15,12 @@ import {
 function BarDataComponent() {
 
     const [BarData, setBarData] = React.useState([]);
+    console.log(BarData);
 
     const getSensor = async () => {
         try {
           const resp = await axios.get('http://localhost:8000/api/sensor/1');
-          setBarData(resp.data.slice(0, 8).reverse());
+          setBarData(resp.data.slice(0, 4).reverse());
         } catch (error) {
           console.log(error)
         }
@@ -35,7 +36,7 @@ function BarDataComponent() {
         return () => clearInterval(interval);
     }, []);
   return (
-    <span className="text-center text-3xl p-5 font-medium text-black bg-white h-auto drop-shadow-md rounded">
+    <span className="text-center text-3xl font-medium text-black bg-white w-full">
         <ResponsiveContainer width="100%" height={300}>
             <BarChart
                 width={500}
@@ -48,14 +49,14 @@ function BarDataComponent() {
                 <XAxis
                 dataKey="timestamp"
                 tickFormatter={(unixTime) => moment(unixTime).format('HH:mm')}
-                tick={{ fontSize: 18 }}
+                tick={{ fontSize: 16 }}
                 />
-                <YAxis tick={{ fontSize: 18 }} />
-                <Tooltip wrapperStyle={{fontSize: "18px"}} />
-                <Legend wrapperStyle={{fontSize: "18px"}} />
-                <Bar dataKey="pH" fill="#9FEAFF" />
+                <YAxis tick={{ fontSize: 16 }} />
+                <Tooltip wrapperStyle={{fontSize: "16px"}} />
+                <Legend wrapperStyle={{fontSize: "14px"}} />
+                <Bar dataKey="pH" fill="#3b82f6" />
                 <Bar dataKey="DO" fill="#37C2A4" />
-                <Bar dataKey="EC" fill="#043A5B" />
+                <Bar dataKey="EC" fill="#0a1936" />
             </BarChart>
         </ResponsiveContainer>
     </span>

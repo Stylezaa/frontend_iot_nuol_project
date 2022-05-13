@@ -6,7 +6,7 @@ import ListView from './ListView';
 import DetailsView from './DetailsView';
 import ProfileComponent from '../ProfileComponent';
 
-const api = 'https://raw.githubusercontent.com/Stylezaa/api_iot/main/data.json';
+const api = 'https://raw.githubusercontent.com/Stylezaa/api_iot/main/Station1.json';
 
 function MapComponent() {
 	const [locationArray, setLocationArray] = useState([]);
@@ -16,7 +16,7 @@ function MapComponent() {
 	
 	function sortedLocationArray(locations) {
 		return [...locations].sort((location1, location2) => {
-			return location2.latest.confirmed - location1.latest.confirmed;
+			return location2.sensor.confirmed - location1.sensor.confirmed;
 		});
 	}
 
@@ -38,9 +38,11 @@ function MapComponent() {
 
 	useEffect(() => {
 		Axios.get(api).then(response => {
-			const sortedLocations = sortedLocationArray(response.data.station_list);
+			const sortedLocations = sortedLocationArray(response.data.station_1);
 			setLocationArray(sortedLocations);
 			// console.log(sortedLocations)
+
+			// setLocationArray(response.data.station_1);
 		}).catch(error => {
 			console.log(error);
 		})

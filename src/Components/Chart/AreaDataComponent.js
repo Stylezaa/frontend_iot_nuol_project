@@ -44,7 +44,7 @@ function AreaDataComponent() {
                 data={AllData}
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
             >
-                <defs>
+                <div>
                 <linearGradient id="colorpH" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#9FEAFF" stopOpacity={0.8} />
                     <stop offset="95%" stopColor="#9FEAFF" stopOpacity={0} />
@@ -57,7 +57,7 @@ function AreaDataComponent() {
                     <stop offset="5%" stopColor="#043A5B" stopOpacity={0.8} />
                     <stop offset="95%" stopColor="#043A5B" stopOpacity={0} />
                 </linearGradient>
-                </defs>
+                </div>
                 <XAxis
                 dataKey="timestamp"
                 tickFormatter={(unixTime) => moment(unixTime).format('HH:mm')}

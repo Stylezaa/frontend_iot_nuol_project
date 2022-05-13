@@ -5,6 +5,6 @@
 @layer components {
     .selected {
         color: #fff;
-        background-color: #000 !important;
+        background-color: #3b82f6 !important;
     }
 }

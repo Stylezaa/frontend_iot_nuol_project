@@ -20,19 +20,16 @@ function ListView(props) {
 
     const totalElements = totalKeyArray.map((key) => {
         const sum = locationArray.reduce((sum, location) => {
-            return sum = (sum + location.latest[key]);  
+            return sum = (sum + location.sensor[key]);  
         }, 0);
 
         const sumData = sum/locationArray.length
         
         return (
-            <div key={key} className="grid grid-cols-2">
-                <div className="">
-                    <h6 className="title">{key}</h6>
-                </div>
-                <div className="">
-                    {/* <p className="is-6 has-text-right">{sum/locationArray.length}</p> */}
-                    <p className="text-right">{sumData.toFixed(2)}</p>
+            <div key={key} className="bg-blue-500 rounded-sm">
+                <div className="flex flex-row justify-center items-center px-2 py-5">
+                    <h6 className="font-xs text-white">{key}</h6>
+                    <p className="ml-2 text-right font-xl font-semibold text-white">{sumData.toFixed(2)}</p>
                 </div>
             </div>
         );
@@ -41,7 +38,7 @@ function ListView(props) {
     const locationElements = locationArray.map(location => {
         const {
             id, name,
-            latest: { pH, DO, EC }
+            sensor: { pH, DO, EC }
         } = location;
 
         let title = name;
@@ -63,9 +60,9 @@ function ListView(props) {
                         <h6>{title}</h6>
                     </div>
                     <div className="flex flex-col">
-                        <p className="text-right">{pH}</p>
-                        <p className="text-right">{DO}</p>
-                        <p className="text-right">{EC}</p>
+                        <p className="text-right">{pH.toFixed(2)}</p>
+                        <p className="text-right">{DO.toFixed(2)}</p>
+                        <p className="text-right">{EC.toFixed(2)}</p>
                     </div>
                 </div>
             </div>
@@ -74,14 +71,19 @@ function ListView(props) {
 
     return (
         <div className="bg-white flex flex-col fixed top-0 bottom-0 left-0 w-80 z-30">
-            <div className="bg-white border-b border-solid border-gray-400 shrink-0 p-5">
-                <h2 className="title">Water MSN</h2>
+            <div className="bg-blue-500	border-b border-solid border-gray-400 shrink-0 p-5">
+                <h2 className="text-white text-center text-lg font-semibold">Water MSN</h2>
             </div>
-            <div className="bg-white border-b border-solid border-gray-400 shrink-0 p-5">
-                <h2 className="title">Average ({locationArray.length}) Stations</h2>
-                {totalElements}
-            </div>
+            <div className="bg-white border-b border-solid border-gray-400 shrink-0 px-2 py-5 shadow-md">
+                <h2 className="font-semibold">Average ({locationArray.length}) Stations</h2>
+                <div className="grid grid-cols-3 mt-3 gap-x-1">
+                    {totalElements}
+                </div>
+            </div>  
             <div className="bg-gray-200 border-b border-solid border-gray-400 grow relative overflow-y-auto">
+                <div className="bg-blue-800 text-center p-4">
+                    <h4 className="text-white font-lg font-semibold">Station List</h4>
+                </div>
                 {locationElements}
             </div>
         </div>

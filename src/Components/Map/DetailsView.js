@@ -1,11 +1,12 @@
 import React from 'react';
 import BarDataComponent from '../Chart/BarDataComponent'
+import DataGridComponent from '../DataGridComponent'
 
 const totalKeyArray = ['pH', 'DO', 'EC'];
 
 function DetailsView(props) {
     const {
-        location: { name, latest },
+        location: { name, sensor },
         onClickClose
     } = props;
 
@@ -15,27 +16,34 @@ function DetailsView(props) {
     // }
 
     const totalElements = totalKeyArray.map(key => {
-        const count = latest[key];
+        const count = sensor[key];
         // console.log(count)
         return (
-            <div key={key} className="grid grid-cols-2">
-                <div className="">
-                    <h6 className="">{key}</h6>
-                </div>
-                <div className="">
-                    <p className="text-right">{count}</p>
+            <div key={key} className="bg-blue-500 rounded-sm">
+                <div className="flex flex-row justify-center items-center px-2 py-5">
+                    <h6 className="font-xs text-white">{key}</h6>
+                    <p className="ml-2 text-right font-xl font-semibold text-white">{count.toFixed(2)}</p>
                 </div>
             </div>
         );
     });
 
     return (
-        <div className="bg-white border-t-8 border-solid border-black shadow-md w-80 p-5 fixed top-0 right-0 bottom-0 z-20">
-            <div className="text-3xl leading-4 absolute top-3 right-3 z-20 cursor-pointer" onClick={onClickClose}>&times;</div>
-            <div className="details-view-content">
-                <h4 className="title is-4">{title}</h4>
-                {totalElements}
-                <BarDataComponent />
+        <div className="bg-white shadow-md w-100 fixed top-0 right-0 bottom-0 z-20 overflow-y-auto">
+            <div>
+                <div className="bg-blue-500 w-full flex justify-between items-center">
+                    <h4 className="text-white font-lg font-semibold p-2">{title}</h4>
+                    <div className="text-3xl cursor-pointer text-white p-2 bg-blue-900" onClick={onClickClose}>&times;</div>
+                </div>
+                <div className="grid grid-cols-3 px-1 mt-3 gap-x-1">
+                    {totalElements}
+                </div>
+                <div className="mt-3 w-full">
+                    <BarDataComponent />
+                </div>
+                <div className="mt-3 w-full">
+                    <DataGridComponent />
+                </div>
             </div>
         </div>
     );

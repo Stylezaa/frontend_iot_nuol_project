@@ -15,7 +15,7 @@ function CustomToolbar() {
         delimiter: ';',
         utf8WithBom: true,
       }}
-      className="flex justify-center bg-blue-400 px-2 py-2 text-sm text-white"
+      className="flex justify-center bg-blue-500 px-1 py-2 text-xs text-white w-full rounded-sm"
    />
     </GridToolbarContainer>
   );
@@ -34,12 +34,12 @@ export default function DataGridComponent() {
 
   const columns = [
     // { field: 'id', headerName: 'ID', width: 0, hidden: 'true'},
-    { field: 'pH', headerName: 'pH', width: 150 },
-    { field: 'EC', headerName: 'EC', width: 150 },
-    { field: 'DO', headerName: 'DO', width: 150 },
-    { field: 'latitude', headerName: 'Latitude', width: 250 },
-    { field: 'longitude', headerName: 'Longitude', width: 250 },
-    { field: 'lastupdate', headerName: 'Last update', width: 250},
+    { field: 'pH', headerName: 'pH', width: 80 },
+    { field: 'EC', headerName: 'EC', width: 80 },
+    { field: 'DO', headerName: 'DO', width: 80 },
+    { field: 'latitude', headerName: 'Latitude', width: 100 },
+    { field: 'longitude', headerName: 'Longitude', width: 100 },
+    { field: 'last_update', headerName: 'Last update', width: 200},
   ]
 
   const getSensor = async () => {
@@ -63,13 +63,13 @@ export default function DataGridComponent() {
   }, []);
 
   return (
-    <div style={{ height: 700, width: '100%' }}>
+    <div style={{ height: 600, width: '100%' }}>
       <DataGrid
           rows={tableData}
           columns={columns}
           loading={loading}
           localeText={{
-            toolbarExport: "Export All"
+            toolbarExport: "Export Data"
           }}
           components={{
             Toolbar: CustomToolbar,

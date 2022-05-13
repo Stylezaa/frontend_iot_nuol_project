@@ -16,7 +16,7 @@ export default function SidebarComponent() {
         className={`${
           open ? 'w-72' : 'w-20'
         } duration-300 h-screen p-5 pt-8 relative`}
-        style={{ backgroundColor: "#0a1936"}}
+        style={{ backgroundColor: "#3b82f6"}}
       >
         <svg
           onClick={() => setOpen(!open)}
@@ -26,7 +26,7 @@ export default function SidebarComponent() {
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
           viewBox="0 0 16 16"
-          style={{color: "#0a1936", borderColor: "#0a1936"}}
+          style={{color: "#3b82f6", borderColor: "#3b82f6"}}
         >
           <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
         </svg>
@@ -54,7 +54,7 @@ export default function SidebarComponent() {
             <a href={Menu.url}>
               <li
                 key={index}
-                className={`text-gray-50 transition ease-in-out duration-200 flex items-center gap-x-4 cursor-pointer border-b border-slate-600 p-2 hover:bg-sky-600 hover:text-white ${
+                className={`text-gray-50 transition ease-in-out duration-200 flex items-center gap-x-4 cursor-pointer border-b border-slate-200 p-2 hover:bg-blue-600 hover:text-white ${
                   Menu.gap ? 'mt-4' : 'mt-2'
                 } ${index === 0 && 'bg-light-white'}`}
               >
@@ -66,7 +66,7 @@ export default function SidebarComponent() {
                 <span
                   className={`${
                     !open && 'hidden'
-                  } text-xl origin-left duration-300 text-sm`}
+                  } text-xl origin-left duration-300 text-lg`}
                 >
                   {Menu.title}
                 </span>

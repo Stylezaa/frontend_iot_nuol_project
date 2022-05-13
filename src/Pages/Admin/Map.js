@@ -1,6 +1,7 @@
 import * as React from 'react';
 import SidebarComponent from '../../Components/Admin/SidebarComponent'
 import BarComponent from '../../Components/Admin/BarComponent'
+// import MapComponent from '../../Components/Map/MapComponent'
 import MapComponent from '../../Components/MapComponent'
 
 export default function DashboardContent() {

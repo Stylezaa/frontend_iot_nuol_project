@@ -35,7 +35,7 @@ export default function ProfileControl(props) {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         >
-            <Avatar className="w-8 h-8 text-sm bg-blue-500 flex items-center">U</Avatar>
+            <Avatar className="w-8 h-8 text-sm bg-blue-500 flex items-center">S</Avatar>
         </Button>
         <Menu
         id="basic-menu"

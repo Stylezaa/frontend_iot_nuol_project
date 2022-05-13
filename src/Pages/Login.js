@@ -20,10 +20,9 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      <Link color="inherit" href="https://www.facebook.com/thanusin.pouvongkhamchan/">
+      <Link class="no-underline hover:text-blue-600" color="inherit" href="https://www.facebook.com/thanusin.pouvongkhamchan/">
         Dev by DevSin
-      </Link>{' '} {'@'}
-      {new Date().getFullYear()}
+      </Link>
     </Typography>
   );
 }
@@ -98,7 +97,7 @@ export default function SignIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Login
           </Typography>
           <Box
             component="form"
@@ -131,14 +130,20 @@ export default function SignIn() {
               type="submit"
               // onSubmit={handleSubmit}
               fullWidth
-              variant="contained"
+              // variant="contained"
+              class="bg-blue-600 hover:bg-blue-700 w-full px-5 py-2 rounded text-white font-semibold"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Login
             </Button>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+        <Copyright sx={{ mt: 4, mb: 4 }} />
+        <div class="text-center">
+          <Link class="ease-out duration-300 hover:text-blue-700 font-semibold underline"color="inherit" href="http://localhost:3000/">
+            {"<"} Back to Home
+          </Link>
+        </div>
       </Container>
     </ThemeProvider>
   );

@@ -7,7 +7,7 @@ export default function SidebarComponent() {
     { title: 'Overview', icon: 'overviews', url: '/dashboard/overview' },
     { title: 'Sensor', icon: 'water', url: '/dashboard/sensor', gap: true },
     { title: 'Map', icon: 'pin', url: '/dashboard/map' },
-    { title: 'Setting', icon: 'setting', url: '/dashboard/setting' },
+    { title: 'Station', icon: 'station', url: '/dashboard/station' },
   ];
 
   return (

@@ -4,6 +4,7 @@ import { DataGrid, GridToolbarContainer, GridToolbarExport } from '@mui/x-data-g
 import { useDemoData } from '@mui/x-data-grid-generator';
 
 function CustomToolbar() {
+
   return (
     <GridToolbarContainer className="flex justify-end">
       <GridToolbarExport 
@@ -20,7 +21,12 @@ function CustomToolbar() {
     </GridToolbarContainer>
   );
 }
-export default function DataGridComponent() {
+export default function DataGridComponent(props) {
+
+  const {
+    pHWidth, ECWidth, DOWidth, latitudeWidth, longitudeWidth, last_updateWidth
+  } = props;
+
   const { data, loading } = useDemoData({
     dataSet: 'tableData',
     rowLength: 4,
@@ -34,12 +40,12 @@ export default function DataGridComponent() {
 
   const columns = [
     // { field: 'id', headerName: 'ID', width: 0, hidden: 'true'},
-    { field: 'pH', headerName: 'pH', width: 80 },
-    { field: 'EC', headerName: 'EC', width: 80 },
-    { field: 'DO', headerName: 'DO', width: 80 },
-    { field: 'latitude', headerName: 'Latitude', width: 100 },
-    { field: 'longitude', headerName: 'Longitude', width: 100 },
-    { field: 'last_update', headerName: 'Last update', width: 200},
+    { field: 'pH', headerName: 'pH', width: pHWidth },
+    { field: 'EC', headerName: 'EC', width: ECWidth },
+    { field: 'DO', headerName: 'DO', width: DOWidth },
+    { field: 'latitude', headerName: 'Latitude', width: latitudeWidth },
+    { field: 'longitude', headerName: 'Longitude', width: longitudeWidth },
+    { field: 'last_update', headerName: 'Last update', width: last_updateWidth},
   ]
 
   const getSensor = async () => {

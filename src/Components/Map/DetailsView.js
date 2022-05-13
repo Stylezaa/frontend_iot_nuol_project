@@ -42,7 +42,14 @@ function DetailsView(props) {
                     <BarDataComponent />
                 </div>
                 <div className="mt-3 w-full">
-                    <DataGridComponent />
+                    <DataGridComponent 
+                        pHWidth={80} 
+                        ECWidth={80} 
+                        DOWidth={80} 
+                        latitudeWidth={100}
+                        longitudeWidth={100}
+                        last_updateWidth={200}
+                    />
                 </div>
             </div>
         </div>

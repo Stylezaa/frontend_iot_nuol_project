@@ -3,6 +3,7 @@ import SidebarComponent from '../../Components/Admin/SidebarComponent'
 import BarComponent from '../../Components/Admin/BarComponent'
 // import SensorComponent from '../../Components/SensorComponent';
 import NumberDataComponent from '../../Components/Chart/NumberDataComponent'
+import DataGridComponent from '../../Components/DataGridComponent'
 
 export default function DashboardContent() {
 
@@ -20,8 +21,14 @@ export default function DashboardContent() {
         </div>
         <div className="container mx-auto px-5">
           <NumberDataComponent />
-          <iframe width="100%"  height="600px" src="http://202.137.130.47:1880/#flow/03c9ea59963c8365" title="Node-Red">
-					</iframe>
+          <DataGridComponent 
+            pHWidth={200} 
+            ECWidth={200} 
+            DOWidth={200} 
+            latitudeWidth={250}
+            longitudeWidth={250}
+            last_updateWidth={300}
+          />
         </div>
       </div>
     </div>

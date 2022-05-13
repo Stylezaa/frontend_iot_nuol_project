@@ -11,7 +11,7 @@ import About from './Pages/About'
 import Overview from './Pages/Admin/Overviews'
 import SensorDash from './Pages/Admin/Sensor'
 import MapDash from './Pages/Admin/Map'
-import Setting from './Pages/Admin/Setting'
+import Station from './Pages/Admin/Station'
 import Login from './Pages/Login'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -40,8 +40,8 @@ root.render(
       <PrivateRoute path="/dashboard/map" exact>
         <MapDash />
       </PrivateRoute>
-      <PrivateRoute path="/dashboard/setting" exact>
-        <Setting />
+      <PrivateRoute path="/dashboard/station" exact>
+        <Station />
       </PrivateRoute>
       <Route path="/login" exact>
         <Login />

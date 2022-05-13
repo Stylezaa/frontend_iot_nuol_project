@@ -2,6 +2,7 @@ import * as React from 'react';
 import SidebarComponent from '../../Components/Admin/SidebarComponent'
 import BarComponent from '../../Components/Admin/BarComponent'
 import NumberDataComponent from '../../Components/Chart/NumberDataComponent'
+import DataGridComponent from '../../Components/DataGridComponent'
 
 export default function DashboardContent() {
 
@@ -19,6 +20,14 @@ export default function DashboardContent() {
         </div>
         <div className="container mx-auto px-5">
           <NumberDataComponent />
+          <DataGridComponent 
+            pHWidth={200} 
+            ECWidth={200} 
+            DOWidth={200} 
+            latitudeWidth={250}
+            longitudeWidth={250}
+            last_updateWidth={300}
+          />
         </div>
       </div>
     </div>

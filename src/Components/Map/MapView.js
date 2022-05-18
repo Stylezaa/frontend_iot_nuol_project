@@ -67,7 +67,7 @@ function MapView(props) {
     });
 
     return (
-        <MapContainer className="w-screen h-screen z-10" center={mapCenter} zoom={14}>
+        <MapContainer className="w-screen h-screen z-10" center={mapCenter} zoom={14} zoomControl={false}>
             <ZoomControl position="topright" />
             <TileLayer
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -21,7 +21,7 @@ export default function DashboardContent() {
           </div>
         </div>
         <div className="container mx-auto px-5">
-          <iframe width="100%"  height="600px" src="http://202.137.130.47:1880/#flow/03c9ea59963c8365" title="Node-Red">
+          <iframe className="rounded" width="100%"  height="600px" src="http://202.137.130.47:1880/#flow/03c9ea59963c8365" title="Node-Red" allowFullScreen="true">
 					</iframe>
         </div>
       </div>

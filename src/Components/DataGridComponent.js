@@ -16,7 +16,7 @@ function CustomToolbar() {
         delimiter: ';',
         utf8WithBom: true,
       }}
-      className="flex justify-center bg-blue-500 px-1 py-2 text-xs text-white w-full rounded-sm"
+      className="flex justify-center bg-blue-500 px-1 py-2 text-xs text-white w-full rounded-sm font-semibold"
    />
     </GridToolbarContainer>
   );
@@ -24,7 +24,7 @@ function CustomToolbar() {
 export default function DataGridComponent(props) {
 
   const {
-    pHWidth, ECWidth, DOWidth, latitudeWidth, longitudeWidth, last_updateWidth
+    GridHeight, pHWidth, ECWidth, DOWidth, latitudeWidth, longitudeWidth, last_updateWidth
   } = props;
 
   const { data, loading } = useDemoData({
@@ -45,12 +45,12 @@ export default function DataGridComponent(props) {
     { field: 'DO', headerName: 'DO', width: DOWidth },
     { field: 'latitude', headerName: 'Latitude', width: latitudeWidth },
     { field: 'longitude', headerName: 'Longitude', width: longitudeWidth },
-    { field: 'last_update', headerName: 'Last update', width: last_updateWidth},
+    { field: 'last_update', headerName: 'Last update', width: last_updateWidth, valueGetter: (params) => new Date(params.row.last_update).toLocaleString()},
   ]
 
   const getSensor = async () => {
     try {
-    const resp = await axios.get('http://localhost:8000/api/sensor/1/all');
+    const resp = await axios.get('http://localhost:8000/api/chart/1/get/all');
     setTableData(resp.data);
     } catch (error) {
     console.log(error)
@@ -69,13 +69,13 @@ export default function DataGridComponent(props) {
   }, []);
 
   return (
-    <div style={{ height: 600, width: '100%' }}>
+    <div style={{ height: GridHeight, width: '100%' }}>
       <DataGrid
           rows={tableData}
           columns={columns}
           loading={loading}
           localeText={{
-            toolbarExport: "Export Data"
+            toolbarExport: "ດາວໂຫລດຂໍ້ມູນ"
           }}
           components={{
             Toolbar: CustomToolbar,

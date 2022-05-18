@@ -4,10 +4,10 @@ export default function SidebarComponent() {
     //bi bi-caret-left-fill
   const [open, setOpen] = React.useState(true);
   const Menus = [
-    { title: 'Overview', icon: 'overviews', url: '/dashboard/overview' },
-    { title: 'Sensor', icon: 'water', url: '/dashboard/sensor', gap: true },
-    { title: 'Map', icon: 'pin', url: '/dashboard/map' },
-    { title: 'Station', icon: 'station', url: '/dashboard/station' },
+    { title: 'ພາບລວມ', icon: 'overviews', url: '/dashboard/overview' },
+    { title: 'ເຊັນເຊີ', icon: 'water', url: '/dashboard/sensor', gap: true },
+    { title: 'ແຜນທີ', icon: 'pin', url: '/dashboard/map' },
+    { title: 'ອຸປະກອນ', icon: 'station', url: '/dashboard/station' },
   ];
 
   return (
@@ -59,14 +59,14 @@ export default function SidebarComponent() {
                 } ${index === 0 && 'bg-light-white'}`}
               >
                 <img
-                  src={require(`../../assets/${Menu.icon}.svg`)}
+                  src={require(`../../assets/icon/${Menu.icon}.svg`)}
                   alt="${Menu.icon}"
                   className="w-7"
                 />
                 <span
                   className={`${
                     !open && 'hidden'
-                  } text-xl origin-left duration-300 text-lg`}
+                  } text-base origin-left duration-300 uppercase font-semibold`}
                 >
                   {Menu.title}
                 </span>

@@ -12,14 +12,20 @@ import {
     Bar,
   } from 'recharts';
 
-function BarDataComponent() {
+// const totalKeyArray = ['pH', 'DO', 'EC'];
+
+function BarDataComponent(props) {
+
+    // const {
+    //   location: { sensor },
+    // } = props;
 
     const [BarData, setBarData] = React.useState([]);
     console.log(BarData);
 
     const getSensor = async () => {
         try {
-          const resp = await axios.get('http://localhost:8000/api/sensor/1');
+          const resp = await axios.get('http://localhost:8000/api/chart/1/get/all');
           setBarData(resp.data.slice(0, 4).reverse());
         } catch (error) {
           console.log(error)
@@ -47,12 +53,12 @@ function BarDataComponent() {
             >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis
-                dataKey="timestamp"
-                tickFormatter={(unixTime) => moment(unixTime).format('HH:mm')}
+                dataKey="last_update"
+                tickFormatter={(unixTime) => moment(unixTime).format('hh:mm:ss')}
                 tick={{ fontSize: 16 }}
                 />
                 <YAxis tick={{ fontSize: 16 }} />
-                <Tooltip wrapperStyle={{fontSize: "16px"}} />
+                <Tooltip wrapperStyle={{fontSize: "16px"}} labelFormatter={last_update => new Date(last_update).toLocaleString()} />
                 <Legend wrapperStyle={{fontSize: "14px"}} />
                 <Bar dataKey="pH" fill="#3b82f6" />
                 <Bar dataKey="DO" fill="#37C2A4" />

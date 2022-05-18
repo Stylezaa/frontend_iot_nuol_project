@@ -24,7 +24,7 @@ export default function BarComponent() {
   return (
     <nav className="shadow-md px-5 py-2">
       <div className="container mx-auto text-center py-0 my-0 flex gap-x-4 justify-end">
-        <ProfileControl link="/" title="Home" />
+        <ProfileControl link="/" title="ໜ້າຫຼັກ" />
       </div>
     </nav>
   );

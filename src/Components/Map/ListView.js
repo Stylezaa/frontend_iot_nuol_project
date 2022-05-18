@@ -57,7 +57,7 @@ function ListView(props) {
             <div key={`${id}-${name}`} className={locationClass} onClick={() => onClickItem(id)}>
                 <div className="grid grid-cols-2">
                     <div>
-                        <h6>{title}</h6>
+                        <h6 className="uppercase">{title}</h6>
                     </div>
                     <div className="flex flex-col">
                         <p className="text-right">{pH.toFixed(2)}</p>
@@ -71,18 +71,16 @@ function ListView(props) {
 
     return (
         <div className="bg-white flex flex-col fixed top-0 bottom-0 left-0 w-80 z-30">
-            <div className="bg-blue-500	border-b border-solid border-gray-400 shrink-0 p-5">
-                <h2 className="text-white text-center text-lg font-semibold">Water MSN</h2>
-            </div>
+            <a href="/" className="bg-blue-500	border-b border-solid border-gray-400 shrink-0 text-white text-center text-lg font-semibold p-5 w-full">Water MSN</a>
             <div className="bg-white border-b border-solid border-gray-400 shrink-0 px-2 py-5 shadow-md">
-                <h2 className="font-semibold">Average ({locationArray.length}) Stations</h2>
+                <h2 className="font-semibold uppercase">ຄ່າສະເລ່ຍ ({locationArray.length}) ອຸປະກອນ</h2>
                 <div className="grid grid-cols-3 mt-3 gap-x-1">
                     {totalElements}
                 </div>
             </div>  
             <div className="bg-gray-200 border-b border-solid border-gray-400 grow relative overflow-y-auto">
                 <div className="bg-blue-800 text-center p-4">
-                    <h4 className="text-white font-lg font-semibold">Station List</h4>
+                    <h4 className="text-white font-lg font-semibold uppercase">ລາຍການອຸປະກອນ</h4>
                 </div>
                 {locationElements}
             </div>

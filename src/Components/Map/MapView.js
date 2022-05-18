@@ -2,15 +2,6 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet';
 import { divIcon } from 'leaflet';
 
-/*
-1. 1-100 => pink, super very small
-2. 101-500 => pink, very small
-3. 501-1000 => pink, small
-4. 1001-5000 => purple, normal
-5. 5001-10000 => purple, big
-6. 10001-50000 => red, very big
-7. 50000 up => red, super very big
-*/
 const icons = {
     // xxSmall: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [12, 12]}),
     // xSmall: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [16, 16]}),
@@ -19,7 +10,7 @@ const icons = {
 	// large: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [48, 48]}),
 	// xLarge: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [72, 72]}),
 	xxLarge: divIcon({className: 
-        'border border-solid rounded-full bg-blue-300/10 border-blue-500',
+        'border-2 border-solid rounded-full bg-blue-300/10 border-blue-500',
          iconSize: [96, 96]})
 };
 

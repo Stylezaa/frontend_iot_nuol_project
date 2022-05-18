@@ -48,7 +48,7 @@ export default function ProfileControl(props) {
         }}
         >
             <MenuItem component={Link} to={props.link}>{props.title}</MenuItem>
-            <MenuItem onClick={logout}>Logout</MenuItem>
+            <MenuItem onClick={logout}>ອອກຈາກລະບົບ</MenuItem>
         </Menu>
     </>
   );

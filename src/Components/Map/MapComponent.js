@@ -6,7 +6,7 @@ import ListView from './ListView';
 import DetailsView from './DetailsView';
 import ProfileComponent from '../ProfileComponent';
 
-const api = 'https://raw.githubusercontent.com/Stylezaa/api_iot/main/Station1.json';
+const api = 'http://localhost:8000/api/sensor/1/get/all';
 
 function MapComponent() {
 	const [locationArray, setLocationArray] = useState([]);
@@ -38,7 +38,7 @@ function MapComponent() {
 
 	useEffect(() => {
 		Axios.get(api).then(response => {
-			const sortedLocations = sortedLocationArray(response.data.station_1);
+			const sortedLocations = sortedLocationArray(response.data);
 			setLocationArray(sortedLocations);
 			// console.log(sortedLocations)
 

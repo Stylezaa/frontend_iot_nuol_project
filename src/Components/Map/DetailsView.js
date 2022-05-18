@@ -32,7 +32,7 @@ function DetailsView(props) {
         <div className="bg-white shadow-md w-100 fixed top-0 right-0 bottom-0 z-20 overflow-y-auto">
             <div>
                 <div className="bg-blue-500 w-full flex justify-between items-center">
-                    <h4 className="text-white font-lg font-semibold p-2">{title}</h4>
+                    <h4 className="text-white font-lg font-semibold p-2 uppercase">{title}</h4>
                     <div className="text-3xl cursor-pointer text-white p-2 bg-blue-900" onClick={onClickClose}>&times;</div>
                 </div>
                 <div className="grid grid-cols-3 px-1 mt-3 gap-x-1">
@@ -43,6 +43,7 @@ function DetailsView(props) {
                 </div>
                 <div className="mt-3 w-full">
                     <DataGridComponent 
+                        GridHeight={500}
                         pHWidth={80} 
                         ECWidth={80} 
                         DOWidth={80} 

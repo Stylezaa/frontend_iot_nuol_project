@@ -60,7 +60,7 @@ function ListView(props) {
                         <h6 className="uppercase">{title}</h6>
                     </div>
                     <div className="flex flex-col">
-                        <p className="text-right">{pH.toFixed(2)}</p>
+                        <p className="text-right">{pH.toFixed(2)}</p> {/* {pH.toFixed(2)} */}
                         <p className="text-right">{DO.toFixed(2)}</p>
                         <p className="text-right">{EC.toFixed(2)}</p>
                     </div>

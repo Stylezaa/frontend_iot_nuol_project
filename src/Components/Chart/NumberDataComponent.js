@@ -8,8 +8,8 @@ function NumberDataComponent() {
 
   const getSensor = async () => {
     try {
-      const resp = await axios.get('http://localhost:8000/api/sensor/1');
-      setLastData(resp.data[0]);
+      const resp = await axios.get('http://localhost:8000/api/chart/1/filter/1');
+      setLastData(resp.data.station_1[0]);
     } catch (error) {
       console.log(error)
     }
@@ -38,11 +38,11 @@ function NumberDataComponent() {
       </span>
       <span className="grid text-center text-xl p-5 text-black bg-white h-28 drop-shadow-md rounded">
         DO:
-        <span className="text-3xl font-medium">{lastData.DO} mg/L</span>
+        <span className="text-3xl font-medium">{lastData.DO}</span>
       </span>
       <span className="grid text-center text-xl p-5 text-black bg-white h-28 drop-shadow-md rounded">
         EC:
-        <span className="text-3xl font-medium">{lastData.EC} μS/c m</span>
+        <span className="text-3xl font-medium">{lastData.EC}</span>
       </span>
     </div>
   )

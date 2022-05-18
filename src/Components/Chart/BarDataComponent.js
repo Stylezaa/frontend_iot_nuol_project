@@ -14,11 +14,7 @@ import {
 
 // const totalKeyArray = ['pH', 'DO', 'EC'];
 
-function BarDataComponent(props) {
-
-    // const {
-    //   location: { sensor },
-    // } = props;
+function BarDataComponent() {
 
     const [BarData, setBarData] = React.useState([]);
     console.log(BarData);

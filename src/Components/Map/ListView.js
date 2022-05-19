@@ -7,7 +7,8 @@ function ListView(props) {
         locationArray, 
         selectedLocation, 
         onSelectItem, 
-        onDeselectItem 
+        onDeselectItem,
+        locationOne
     } = props;
 
     const [open, setOpen] = React.useState(true);
@@ -24,8 +25,9 @@ function ListView(props) {
         const sum = locationArray.reduce((sum, location) => {
             return sum = (sum + location.sensor[key]);  
         }, 0);
-
+        
         const sumData = sum/locationArray.length
+        // console.log(sum)
         
         return (
             <div key={key} className="bg-blue-500 rounded-sm">
@@ -37,16 +39,16 @@ function ListView(props) {
         );
     });
 
-    const locationElements = locationArray.map(location => {
+    const locationElements = locationOne.map(location => {
         const {
             id, name,
             sensor: { pH, DO, EC }
         } = location;
 
-        let title = name;
-        // if (province !== '' && province !== country) {
-        //     title = `${province}, ${country}`;
-        // }
+        // let title = name;
+        // // if (province !== '' && province !== country) {
+        // //     title = `${province}, ${country}`;
+        // // }
 
         let locationClass = 'bg-white p-5 cursor-pointer border-b border-solid border-gray-400 first:mt-5 last:mb-5 last:border-b-0 hover:bg-gray-200';
         if (selectedLocation !== null) {
@@ -59,12 +61,12 @@ function ListView(props) {
             <div key={`${id}-${name}`} className={locationClass} onClick={() => onClickItem(id)}>
                 <div className="grid grid-cols-2">
                     <div>
-                        <h6 className="uppercase">{title}</h6>
+                        <h6 className="uppercase">{name}</h6>
                     </div>
                     <div className="flex flex-col">
                         <p className="text-right">{pH.toFixed(2)}</p> {/* {pH.toFixed(2)} */}
-                        <p className="text-right">{DO.toFixed(2)}</p>
-                        <p className="text-right">{EC.toFixed(2)}</p>
+                        <p className="text-right">{DO.toFixed(2)} mg/L</p>
+                        <p className="text-right">{EC.toFixed(2)} μS/c m</p>
                     </div>
                 </div>
             </div>
@@ -87,7 +89,7 @@ function ListView(props) {
             </svg>
             <a href="/" className={`${open ? 'block': 'hidden'} bg-blue-500	border-b border-solid border-gray-400 shrink-0 text-white text-center text-lg font-semibold p-5 w-full`}>Water MSN</a>
             <div className={`${open ? 'block': 'hidden'} bg-white border-b border-solid border-gray-400 shrink-0 px-2 py-5 shadow-md`}>
-                <h2 className="font-semibold uppercase">ຄ່າສະເລ່ຍ ({locationArray.length}) ອຸປະກອນ</h2>
+                <h2 className="font-semibold uppercase">ຄ່າສະເລ່ຍ ({locationArray.length}) Station 1</h2>
                 <div className="grid grid-cols-3 mt-3 gap-x-1">
                     {totalElements}
                 </div>

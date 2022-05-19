@@ -38,11 +38,11 @@ function NumberDataComponent() {
       </span>
       <span className="grid text-center text-xl p-5 text-black bg-white h-28 drop-shadow-md rounded">
         DO:
-        <span className="text-3xl font-medium">{lastData.DO}</span>
+        <span className="text-3xl font-medium">{lastData.DO} mg/L</span>
       </span>
       <span className="grid text-center text-xl p-5 text-black bg-white h-28 drop-shadow-md rounded">
         EC:
-        <span className="text-3xl font-medium">{lastData.EC}</span>
+        <span className="text-3xl font-medium">{lastData.EC} μS/c m</span>
       </span>
     </div>
   )

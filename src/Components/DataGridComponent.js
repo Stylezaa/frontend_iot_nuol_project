@@ -33,7 +33,7 @@ export default function DataGridComponent(props) {
     maxColumns: 6,
   });
 
-  console.log(data)
+  // console.log(data)
 
   const [tableData, setTableData] = React.useState([])
   // const [dateTime, setDateTime] = useState([]);
@@ -41,8 +41,18 @@ export default function DataGridComponent(props) {
   const columns = [
     // { field: 'id', headerName: 'ID', width: 0, hidden: 'true'},
     { field: 'pH', headerName: 'pH', width: pHWidth },
-    { field: 'EC', headerName: 'EC', width: ECWidth },
-    { field: 'DO', headerName: 'DO', width: DOWidth },
+    { field: 'EC', headerName: 'EC', width: ECWidth, valueFormatter: (params) => {
+      if (params.value == null) {
+        return '';
+      }
+      return `${params.value} mg/L`;
+    }, },
+    { field: 'DO', headerName: 'DO', width: DOWidth, valueFormatter: (params) => {
+      if (params.value == null) {
+        return '';
+      }
+      return `${params.value} μS/c m`;
+    }, },
     { field: 'latitude', headerName: 'Latitude', width: latitudeWidth },
     { field: 'longitude', headerName: 'Longitude', width: longitudeWidth },
     { field: 'last_update', headerName: 'Last update', width: last_updateWidth, valueGetter: (params) => new Date(params.row.last_update).toLocaleString()},

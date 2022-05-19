@@ -17,7 +17,7 @@ import {
 function BarDataComponent() {
 
     const [BarData, setBarData] = React.useState([]);
-    console.log(BarData);
+    // console.log(BarData);
 
     const getSensor = async () => {
         try {
@@ -57,8 +57,8 @@ function BarDataComponent() {
                 <Tooltip wrapperStyle={{fontSize: "16px"}} labelFormatter={last_update => new Date(last_update).toLocaleString()} />
                 <Legend wrapperStyle={{fontSize: "14px"}} />
                 <Bar dataKey="pH" fill="#3b82f6" />
-                <Bar dataKey="DO" fill="#37C2A4" />
-                <Bar dataKey="EC" fill="#0a1936" />
+                <Bar dataKey="DO" fill="#37C2A4" unit=" mg/L"/>
+                <Bar dataKey="EC" fill="#0a1936" unit=" μS/c m"/>
             </BarChart>
         </ResponsiveContainer>
     </span>

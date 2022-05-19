@@ -44,9 +44,9 @@ function DetailsView(props) {
                 <div className="mt-3 w-full">
                     <DataGridComponent 
                         GridHeight={500}
-                        pHWidth={80} 
-                        ECWidth={80} 
-                        DOWidth={80} 
+                        pHWidth={60} 
+                        ECWidth={120} 
+                        DOWidth={120} 
                         latitudeWidth={100}
                         longitudeWidth={100}
                         last_updateWidth={200}

@@ -10,9 +10,11 @@ const api = 'http://localhost:8000/api/sensor/1/get/all';
 
 function MapComponent() {
 	const [locationArray, setLocationArray] = useState([]);
+	const [locationOne, setLocationOne] = useState([]);
 	const [selectedLocation, setSelectedLocation] = useState(null);
 	const [mapCenter, setMapCenter]= useState([17.956352, 102.603704]);
-	console.log(mapCenter);
+	// console.log(mapCenter);
+	// console.log(locationOne)
 	
 	function sortedLocationArray(locations) {
 		return [...locations].sort((location1, location2) => {
@@ -40,6 +42,7 @@ function MapComponent() {
 		Axios.get(api).then(response => {
 			const sortedLocations = sortedLocationArray(response.data);
 			setLocationArray(sortedLocations);
+			setLocationOne(sortedLocations.slice(0, 1));
 			// console.log(sortedLocations)
 
 			// setLocationArray(response.data.station_1);
@@ -57,12 +60,14 @@ function MapComponent() {
 		<div className="App">
 			<ProfileComponent />
 			<ListView 
-				locationArray={locationArray} 
+				locationArray={locationArray}
+				locationOne={locationOne} 
 				selectedLocation={selectedLocation} 
 				onSelectItem={onSelectLocation} 
 				onDeselectItem={onDeselectLocation} />
 			<MapView 
-				locationArray={locationArray} 
+				locationArray={locationArray}
+				locationOne={locationOne} 
 				mapCenter={mapCenter} 
 				onSelectMarker={onSelectLocation} />
 			{detailsView}

@@ -10,14 +10,14 @@ const icons = {
 	// large: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [48, 48]}),
 	// xLarge: divIcon({className: 'border border-solid rounded-full bg-blue-300/10 border-blue-500', iconSize: [72, 72]}),
 	xxLarge: divIcon({className: 
-        'border-2 border-solid rounded-full bg-blue-300/10 border-blue-500',
+        'border-2 border-solid rounded-full bg-blue-300/60 border-blue-500',
          iconSize: [96, 96]})
 };
 
 function MapView(props) {
-    const { locationArray, mapCenter, onSelectMarker } = props;
-
-    const markerElements = locationArray.map(location => {
+    const { locationOne, mapCenter, onSelectMarker } = props;
+ 
+    const markerElements = locationOne.map(location => {
         const {
             id, name,
             coordinates: { latitude, longitude },
@@ -43,7 +43,7 @@ function MapView(props) {
         //     markerIcon = icons.xxLarge;
         // }
 
-        let title = name;
+        // let title = name;
         // if (province !== '' && province !== country) {
         //     title = `${province}, ${country}`;
         // }
@@ -61,7 +61,7 @@ function MapView(props) {
                 position={[latitude, longitude]}
                 icon={markerIcon} 
                 eventHandlers={{click: () => onSelectMarker(id)}} >
-                <Popup>{title}</Popup>
+                <Popup>{name}</Popup>
             </Marker>
         );
     });

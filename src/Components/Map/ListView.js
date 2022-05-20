@@ -30,7 +30,7 @@ function ListView(props) {
         // console.log(sum)
         
         return (
-            <div key={key} className="bg-blue-500 rounded-sm">
+            <div key={key} className="bg-blue-500 rounded-sm add_unit">
                 <div className="flex flex-row justify-center items-center px-2 py-5">
                     <h6 className="font-xs text-white">{key}</h6>
                     <p className="ml-2 text-right font-xl font-semibold text-white">{sumData.toFixed(2)}</p>
@@ -74,7 +74,7 @@ function ListView(props) {
     });
 
     return (
-        <div className={`${open ? 'w-80': 'w-0'} ease-in-out duration-700 bg-white flex flex-col fixed top-0 bottom-0 left-0 z-30`}>
+        <div className={`${open ? 'w-auto': 'w-0'} ease-in-out duration-700 bg-white flex flex-col fixed top-0 bottom-0 left-0 z-30`}>
             <svg
                 onClick={() => setOpen(!open)}
                 className={`z-50 ease-in-out duration-700 bi bi-chevron-double-right shadow-lg absolute cursor-pointer rounded-l -right-3 top-9 w-10 font-medium border-2 bg-white border-blue-600 ${

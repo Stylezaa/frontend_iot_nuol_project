@@ -8,7 +8,7 @@ function NumberDataComponent() {
 
   const getSensor = async () => {
     try {
-      const resp = await axios.get('http://localhost:8000/api/chart/1/filter/1');
+      const resp = await axios.get('https://ceit-iot-api.herokuapp.com/api/chart/1/filter/1');
       setLastData(resp.data.station_1[0]);
     } catch (error) {
       console.log(error)

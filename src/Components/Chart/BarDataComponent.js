@@ -21,7 +21,7 @@ function BarDataComponent() {
 
     const getSensor = async () => {
         try {
-          const resp = await axios.get('http://localhost:8000/api/chart/1/get/all');
+          const resp = await axios.get('https://ceit-iot-api.herokuapp.com/api/chart/1/get/all');
           setBarData(resp.data.slice(0, 4).reverse());
         } catch (error) {
           console.log(error)

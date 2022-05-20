@@ -29,9 +29,9 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-const apiUrl = 'http://localhost:8000/api/user/login';
+const apiUrl = 'https://ceit-iot-api.herokuapp.com/api/user/login';
 
-const urlProfile = 'http://localhost:8000/api/user/me';
+const urlProfile = 'https://ceit-iot-api.herokuapp.com/api/user/me';
 
 export default function SignIn() {
   const history = useHistory();
@@ -140,7 +140,7 @@ export default function SignIn() {
         </Box>
         <Copyright sx={{ mt: 4, mb: 4 }} />
         <div class="text-center">
-          <Link class="ease-out duration-300 hover:text-blue-700 font-semibold underline"color="inherit" href="http://localhost:3000/">
+          <Link class="ease-out duration-300 hover:text-blue-700 font-semibold underline"color="inherit" href="/">
             {"<"} Back to Home
           </Link>
         </div>

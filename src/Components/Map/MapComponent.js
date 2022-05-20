@@ -6,7 +6,7 @@ import ListView from './ListView';
 import DetailsView from './DetailsView';
 import ProfileComponent from '../ProfileComponent';
 
-const api = 'http://localhost:8000/api/sensor/1/get/all';
+const api = 'https://ceit-iot-api.herokuapp.com/api/sensor/1/get/all';
 
 function MapComponent() {
 	const [locationArray, setLocationArray] = useState([]);

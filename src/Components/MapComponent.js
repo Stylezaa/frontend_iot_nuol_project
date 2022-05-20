@@ -20,7 +20,7 @@ function MapComponent() {
 
     const getSensor = async () => {
         try {
-        const resp = await axios.get('http://localhost:8000/api/sensor/1');
+        const resp = await axios.get('https://ceit-iot-api.herokuapp.com/api/sensor/1');
         getAllData(resp.data);
         } catch (error) {
         console.log(error)

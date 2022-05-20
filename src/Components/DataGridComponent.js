@@ -60,7 +60,7 @@ export default function DataGridComponent(props) {
 
   const getSensor = async () => {
     try {
-    const resp = await axios.get('http://localhost:8000/api/chart/1/get/all');
+    const resp = await axios.get('https://ceit-iot-api.herokuapp.com/api/chart/1/get/all');
     setTableData(resp.data);
     } catch (error) {
     console.log(error)

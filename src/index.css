@@ -36,9 +36,11 @@ html, body, ul, li, span, p, a, h1, h2, h3, h4, h5, h6 {
 
 /* Add unit for EC DO */
 .add_unit:nth-child(2) p:after {
-    content: " mg/L";
+    content: " ( mg/L )";
+    font-size: 12px;
 }
 
 .add_unit:nth-child(3) p:after {
-    content: " μS/c m";
+    content: " ( μS/c m )";
+    font-size: 12px;
 }

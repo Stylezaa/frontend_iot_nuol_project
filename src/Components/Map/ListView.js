@@ -50,7 +50,7 @@ function ListView(props) {
         // //     title = `${province}, ${country}`;
         // // }
 
-        let locationClass = 'bg-white p-5 cursor-pointer border-b border-solid border-gray-400 first:mt-5 last:mb-5 last:border-b-0 hover:bg-gray-200';
+        let locationClass = 'bg-white p-5 cursor-pointer border border-solid border-gray-100 my-2 shadow-md hover:bg-gray-200';
         if (selectedLocation !== null) {
             if (location.id === selectedLocation.id) {
                 locationClass += ' selected';
@@ -94,7 +94,7 @@ function ListView(props) {
                     {totalElements}
                 </div>
             </div>  
-            <div className="bg-gray-200 border-b border-solid border-gray-400 grow relative overflow-y-auto">
+            <div className="bg-slate-50 border-b border-solid border-gray-400 grow relative overflow-y-auto">
                 <div className="bg-blue-800 text-center p-4">
                     <h4 className="text-white font-lg font-semibold uppercase">ລາຍການອຸປະກອນ</h4>
                 </div>

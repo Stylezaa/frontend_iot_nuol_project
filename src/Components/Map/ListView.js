@@ -74,16 +74,16 @@ function ListView(props) {
     });
 
     return (
-        <div className={`${open ? 'w-auto': 'w-0'} ease-in-out duration-700 bg-white flex flex-col fixed top-0 bottom-0 left-0 z-30`}>
+        <div className={`ease-in-out duration-700 ${open ? 'w-auto': 'w-0'} bg-white flex flex-col fixed top-0 bottom-0 left-0 z-30`}>
             <svg
                 onClick={() => setOpen(!open)}
-                className={`z-50 ease-in-out duration-700 bi bi-chevron-double-right shadow-lg absolute cursor-pointer rounded-l -right-3 top-9 w-10 font-medium border-2 bg-white border-blue-600 ${
+                className={`z-50 bi bi-chevron-double-right shadow-lg absolute cursor-pointer rounded-l -right-10 top-9 w-10 font-medium border-2 bg-blue-500 ${
                     !open && "rotate-180 left-0 rounded-r shadow-lg"
                 }`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
                 viewBox="0 0 16 16"
-                style={{color: "#3b82f6", borderColor: "#3b82f6"}}
+                style={{color: "#FFF", borderColor: "#3b82f6"}}
                 >
                     <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
             </svg>

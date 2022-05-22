@@ -5,8 +5,8 @@ export default function SidebarComponent() {
   const [open, setOpen] = React.useState(true);
   const Menus = [
     { title: 'ພາບລວມ', icon: 'overviews', url: '/dashboard/overview' },
-    { title: 'ເຊັນເຊີ', icon: 'water', url: '/dashboard/sensor', gap: true },
-    { title: 'ແຜນທີ', icon: 'pin', url: '/dashboard/map' },
+    // { title: 'ເຊັນເຊີ', icon: 'water', url: '/dashboard/sensor', gap: true },
+    // { title: 'ແຜນທີ', icon: 'pin', url: '/dashboard/map' },
     { title: 'ອຸປະກອນ', icon: 'station', url: '/dashboard/station' },
   ];
 

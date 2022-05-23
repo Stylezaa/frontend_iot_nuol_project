@@ -40,7 +40,7 @@ function DetailsView(props) {
             <div className="grid grid-cols-3 px-1 my-3 gap-x-1">
                 {totalElements}
             </div>
-            <div className="px-1 lg:hidden">
+            <div className="px-1 mb-3 lg:hidden">
                 <button onClick={() => setOpen(!open)} className="border-2 px-5 py-2 text-sm border-blue-500 mt-2 w-full uppercase font-semibold rounded-sm">{open ? 'ຂໍ້ມູນເພີ່ມຕື່ມ': ' ປິດ'}</button>
             </div>        
             <div className={`${open ? 'hidden lg:block': ' block'} mt-3 w-full`}>

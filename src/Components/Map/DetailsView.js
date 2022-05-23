@@ -21,15 +21,15 @@ function DetailsView(props) {
         return (
             <div key={key} className="bg-blue-500 rounded-sm add_unit">
                 <div className="flex flex-row justify-center items-center px-2 py-5">
-                    <h6 className="font-xs text-white">{key}</h6>
-                    <p className="ml-2 text-right font-xl font-semibold text-white">{count.toFixed(2)}</p>
+                    <h6 className="font-sm text-white">{key}</h6>
+                    <p className="ml-2 text-right text-sm sm:text-xl font-semibold text-white">{count.toFixed(2)}</p>
                 </div>
             </div>
         );
     });
 
     return (
-        <div className="bg-white shadow-lg rounded fixed left-4 right-4 bottom-0 top-1/2 top: lg:w-100 lg:fixed lg:top-0 lg:right-0 lg:left-2/3 lg:bottom-0 z-40 overflow-y-auto">
+        <div className="bg-white shadow-lg rounded fixed left-4 right-4 bottom-0 top-[80%] top: lg:w-100 lg:fixed lg:top-0 lg:right-0 lg:left-2/3 lg:bottom-0 z-40 overflow-y-auto">
             <div>
                 <div className="bg-blue-500 w-full flex justify-between items-center">
                     <h4 className="text-white font-lg font-semibold p-2 uppercase">{title}</h4>
@@ -38,10 +38,10 @@ function DetailsView(props) {
                 <div className="grid grid-cols-3 px-1 mt-3 gap-x-1">
                     {totalElements}
                 </div>
-                <div className="mt-3 w-full">
+                <div className="mt-3 hidden sm:block w-full">
                     <BarDataComponent />
                 </div>
-                <div className="mt-3 w-full">
+                <div className="mt-3 hidden sm:block w-full">
                     <DataGridComponent 
                         GridHeight={500}
                         pHWidth={60} 

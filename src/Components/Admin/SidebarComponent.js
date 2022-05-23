@@ -14,7 +14,7 @@ export default function SidebarComponent() {
     <>
       <div
         className={`${
-          open ? 'w-72' : 'w-20'
+          open ? 'w-20 sm:w-72' : 'w-20'
         } duration-300 h-screen p-5 pt-8 relative`}
         style={{ backgroundColor: "#3b82f6"}}
       >
@@ -26,7 +26,7 @@ export default function SidebarComponent() {
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
           viewBox="0 0 16 16"
-          style={{color: "#3b82f6", borderColor: "#3b82f6"}}
+          style={{color: "#1e3a8a", borderColor: "#1e3a8a"}}
         >
           <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
         </svg>

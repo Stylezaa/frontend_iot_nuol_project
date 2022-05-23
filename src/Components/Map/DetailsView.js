@@ -29,7 +29,7 @@ function DetailsView(props) {
     });
 
     return (
-        <div className="bg-white shadow-md w-100 fixed top-0 right-0 bottom-0 z-20 overflow-y-auto">
+        <div className="bg-white shadow-lg rounded fixed left-4 right-4 bottom-0 top-1/2 top: lg:w-100 lg:fixed lg:top-0 lg:right-0 lg:left-2/3 lg:bottom-0 z-40 overflow-y-auto">
             <div>
                 <div className="bg-blue-500 w-full flex justify-between items-center">
                     <h4 className="text-white font-lg font-semibold p-2 uppercase">{title}</h4>

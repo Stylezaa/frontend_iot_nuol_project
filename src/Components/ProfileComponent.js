@@ -11,7 +11,7 @@ function ProfileComponent() {
     }
 
     return (
-        <>
+        <div className="hidden sm:block">
           {isAuth
               ? 
               <>
@@ -28,7 +28,7 @@ function ProfileComponent() {
                 </div>
               </>
           }   
-        </>
+        </div>
     )
 }
 

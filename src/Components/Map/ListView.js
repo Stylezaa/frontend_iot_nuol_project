@@ -32,8 +32,8 @@ function ListView(props) {
         return (
             <div key={key} className="bg-blue-500 rounded-sm add_unit">
                 <div className="flex flex-row justify-center items-center px-2 py-5">
-                    <h6 className="font-xs text-white">{key}</h6>
-                    <p className="ml-2 text-right font-xl font-semibold text-white">{sumData.toFixed(2)}</p>
+                    <h6 className="text-sm text-white">{key}</h6>
+                    <p className="ml-2 text-right text-sm sm:text-xl font-semibold text-white">{sumData.toFixed(2)}</p>
                 </div>
             </div>
         );

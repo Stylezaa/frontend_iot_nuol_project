@@ -10,7 +10,7 @@ function DetailsView(props) {
         onClickClose
     } = props;
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(true);
     // console.log(open);
 
     let title = name;

@@ -10,8 +10,8 @@ export default function DashboardContent() {
       <SidebarComponent />
       <div className="h-screen flex-1 ">
         <BarComponent />
-        <div className="container mx-auto my-3 px-5 flex justify-between">
-          <ul className="flex gap-x-2">
+        <div className="container mx-auto my-3 px-5 flex justify-end lg:justify-between">
+          <ul className="flex gap-x-2 hidden lg:flex">
             <li className="text-gray-400 uppercase text-base">ໜ້າຈັດການລະບົບ</li>
             <li className="text-base">/</li>
             <li className="font-medium text-blue-500 uppercase text-base">ອຸປະກອນ</li>

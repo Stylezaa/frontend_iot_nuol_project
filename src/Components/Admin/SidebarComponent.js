@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SidebarComponent() {
     //bi bi-caret-left-fill
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const Menus = [
     { title: 'ພາບລວມ', icon: 'overviews', url: '/dashboard/overview' },
     // { title: 'ເຊັນເຊີ', icon: 'water', url: '/dashboard/sensor', gap: true },
@@ -20,7 +20,7 @@ export default function SidebarComponent() {
       >
         <svg
           onClick={() => setOpen(!open)}
-          className={`bi bi-chevron-double-right absolute cursor-pointer rounded -right-3 top-9 w-7 font-medium border-2 bg-white border-blue-600 ${
+          className={`hidden md:block bi bi-chevron-double-right absolute cursor-pointer rounded -right-3 top-9 w-7 font-medium border-2 bg-white border-blue-600 ${
             !open && "rotate-180"
           }`}
           xmlns="http://www.w3.org/2000/svg"

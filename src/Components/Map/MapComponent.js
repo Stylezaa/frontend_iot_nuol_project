@@ -12,7 +12,7 @@ function MapComponent() {
 	const [locationArray, setLocationArray] = useState([]);
 	const [locationOne, setLocationOne] = useState([]);
 	const [selectedLocation, setSelectedLocation] = useState(null);
-	const [mapCenter, setMapCenter]= useState([17.956352, 102.603704]);
+	const [mapCenter, setMapCenter]= useState([17.938568, 102.625921]);
 	
 	function sortedLocationArray(locations) {
 		return [...locations].sort((location1, location2) => {

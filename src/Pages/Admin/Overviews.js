@@ -1,7 +1,6 @@
 import * as React from 'react';
 import SidebarComponent from '../../Components/Admin/SidebarComponent'
 import BarComponent from '../../Components/Admin/BarComponent'
-// import SensorComponent from '../../Components/SensorComponent';
 import NumberDataComponent from '../../Components/Chart/NumberDataComponent'
 import DataGridComponent from '../../Components/DataGridComponent'
 import CurrentTime from '../../Components/CurrentTime'

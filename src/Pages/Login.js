@@ -41,20 +41,12 @@ export default function SignIn() {
     const data = new FormData(event.currentTarget);
 
     try {
-      // console.log('Data: ' + data.get('email'));
-      // console.log('Data: ' + data.get('password'));
       const resp = await axios.post(apiUrl, {
         email: data.get('email'),
         password: data.get('password'),
       });
 
-      // console.log(resp);
-
-      // //Save token to LocalStorage
-      // console.log(resp.status);
-
       if (resp.status === 200) {
-        // alert('Login Success');
         localStorage.setItem('token', JSON.stringify(resp.data));
         history.replace('/dashboard/overview')
         history.go(0);
@@ -71,13 +63,7 @@ export default function SignIn() {
 
       console.log(respProfile.data.user);
     } catch (error) {
-      // return (
-      //   <Stack spacing={2} sx={{ width: '100%' }}>
-      //     <Alert severity="error">{error.response.data.error.message}</Alert>
-      //   </Stack>
-      // )
       alert(error.response.data.error.message)
-
     }
   };
 

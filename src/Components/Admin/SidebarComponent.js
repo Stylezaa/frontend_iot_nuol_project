@@ -1,12 +1,10 @@
 import React from 'react';
 
 export default function SidebarComponent() {
-    //bi bi-caret-left-fill
+
   const [open, setOpen] = React.useState(false);
   const Menus = [
     { title: 'ພາບລວມ', icon: 'overviews', url: '/dashboard/overview' },
-    // { title: 'ເຊັນເຊີ', icon: 'water', url: '/dashboard/sensor', gap: true },
-    // { title: 'ແຜນທີ', icon: 'pin', url: '/dashboard/map' },
     { title: 'ອຸປະກອນ', icon: 'station', url: '/dashboard/station' },
   ];
 

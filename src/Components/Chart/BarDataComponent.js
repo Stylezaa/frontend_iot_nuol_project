@@ -12,12 +12,9 @@ import {
     Bar,
   } from 'recharts';
 
-// const totalKeyArray = ['pH', 'DO', 'EC'];
-
 function BarDataComponent() {
 
     const [BarData, setBarData] = React.useState([]);
-    // console.log(BarData);
 
     const getSensor = async () => {
         try {

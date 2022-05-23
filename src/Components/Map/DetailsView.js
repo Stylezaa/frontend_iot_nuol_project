@@ -11,16 +11,12 @@ function DetailsView(props) {
     } = props;
 
     const [open, setOpen] = React.useState(true);
-    // console.log(open);
 
     let title = name;
-    // if (province !== '' && province !== country) {
-    //     title = `${province}, ${country}`;
-    // }
 
     const totalElements = totalKeyArray.map(key => {
         const count = sensor[key];
-        // console.log(count)
+
         return (
             <div key={key} className="bg-blue-500 rounded-sm add_unit">
                 <div className="flex flex-row justify-center items-center px-2 py-5">

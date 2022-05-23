@@ -13,8 +13,6 @@ function MapComponent() {
 	const [locationOne, setLocationOne] = useState([]);
 	const [selectedLocation, setSelectedLocation] = useState(null);
 	const [mapCenter, setMapCenter]= useState([17.956352, 102.603704]);
-	// console.log(mapCenter);
-	// console.log(locationOne)
 	
 	function sortedLocationArray(locations) {
 		return [...locations].sort((location1, location2) => {
@@ -23,7 +21,7 @@ function MapComponent() {
 	}
 
 	const onSelectLocation = useCallback((id) => {
-        // console.log(id)
+
 		const location = locationArray.find(_location => _location.id === id);
 		if (location === undefined) {
 			setSelectedLocation(null);
@@ -43,9 +41,6 @@ function MapComponent() {
 			const sortedLocations = sortedLocationArray(response.data);
 			setLocationArray(sortedLocations);
 			setLocationOne(sortedLocations.slice(0, 1));
-			// console.log(sortedLocations)
-
-			// setLocationArray(response.data.station_1);
 		}).catch(error => {
 			console.log(error);
 		})

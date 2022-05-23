@@ -101,10 +101,8 @@ export default function CustomExport(props) {
     maxColumns: 6,
     });
 
-    // console.log(data)
 
     const [tableData, setTableData] = React.useState([])
-    // const [dateTime, setDateTime] = useState([]);
 
     const columns = [
       // { field: 'id', headerName: 'ID', width: 0, hidden: 'true'},

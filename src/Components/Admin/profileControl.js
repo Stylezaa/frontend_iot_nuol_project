@@ -4,7 +4,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-// import Link from '@mui/material/Link';
 import { Link } from 'react-router-dom';
 
 export default function ProfileControl(props) {
@@ -35,7 +34,7 @@ export default function ProfileControl(props) {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         >
-            <Avatar className="w-8 h-8 text-sm bg-blue-500 flex items-center">S</Avatar>
+            <Avatar className="w-8 h-8 text-sm bg-blue-900 flex items-center">S</Avatar>
         </Button>
         <Menu
         id="basic-menu"

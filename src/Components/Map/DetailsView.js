@@ -32,7 +32,7 @@ function DetailsView(props) {
     });
     
     return (
-        <div className={`bg-white shadow-lg rounded fixed left-4 right-4 bottom-0 ${open ? 'top-[67%]': ' top-1/2'} top: lg:w-100 lg:fixed lg:top-0 lg:right-0 lg:left-2/3 lg:bottom-0 z-40 overflow-y-auto`}>
+        <div className={`bg-white shadow-lg rounded fixed left-4 right-4 bottom-0 ${open ? 'top-[68%]': ' top-1/2'} top: lg:w-100 lg:fixed lg:top-0 lg:right-0 lg:left-2/3 lg:bottom-0 z-40 overflow-y-auto`}>
             <div className="bg-blue-500 w-full flex justify-between items-center">
                 <h4 className="text-white font-lg font-semibold p-2 uppercase">{title}</h4>
                 <div className="text-3xl cursor-pointer text-white p-2 bg-blue-900" onClick={onClickClose}>&times;</div>
@@ -43,10 +43,10 @@ function DetailsView(props) {
             <div className="px-1 mb-3 lg:hidden">
                 <button onClick={() => setOpen(!open)} className="border-2 px-5 py-2 text-sm border-blue-500 mt-2 w-full uppercase font-semibold rounded-sm">{open ? 'ຂໍ້ມູນເພີ່ມຕື່ມ': ' ປິດ'}</button>
             </div>        
-            <div className={`${open ? 'hidden lg:block': ' block'} mt-3 w-full`}>
+            <div className={`${open ? 'hidden lg:block': 'block'} mt-3 w-full`}>
                 <BarDataComponent />
             </div>
-            <div className={`${open ? 'hidden lg:block': ' block'} mt-3 w-full`}>
+            <div className={`${open ? 'hidden lg:block': 'block'} mt-3 w-full`}>
                 <DataGridComponent 
                     GridHeight={500}
                     pHWidth={60} 

@@ -4,12 +4,14 @@ import BarComponent from '../../Components/Admin/BarComponent'
 import NumberDataComponent from '../../Components/Chart/NumberDataComponent'
 import DataGridComponent from '../../Components/DataGridComponent'
 import CurrentTime from '../../Components/CurrentTime'
+import NavbarMobileComponent from '../../Components/Admin/NavbarMobileComponent'
 
 export default function DashboardContent() {
 
   return (
-    <div className="flex">
+    <div className="flex relative">
       <SidebarComponent />
+      <NavbarMobileComponent />
       <div className="h-screen flex-1">
         <BarComponent />
         <div className="container mx-auto my-3 px-5 flex justify-end lg:justify-between">

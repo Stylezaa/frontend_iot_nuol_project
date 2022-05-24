@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SidebarComponent() {
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const Menus = [
     { title: 'ພາບລວມ', icon: 'overviews', url: '/dashboard/overview' },
     { title: 'ອຸປະກອນ', icon: 'station', url: '/dashboard/station' },
@@ -12,8 +12,8 @@ export default function SidebarComponent() {
     <>
       <div
         className={`${
-          open ? 'w-20 sm:w-72' : 'w-20'
-        } duration-300 h-screen p-5 pt-8 relative`}
+          open ? 'hidden lg:block lg:w-72' : 'hidden lg:block lg:w-20'
+        } duration-300 h-screen p-5 pt-8 relative z-10`}
         style={{ backgroundColor: "#3b82f6"}}
       >
         <svg

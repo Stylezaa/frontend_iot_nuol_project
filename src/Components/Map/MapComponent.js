@@ -52,7 +52,7 @@ function MapComponent() {
 	if (selectedLocation != null) {
 		detailsView = <DetailsView location={selectedLocation} onClickClose={onDeselectLocation} />
 	}
-	if (!loading) {
+	if (loading) {
 		return (
 			<>
 				<div className="hidden lg:flex space-x-4 absolute top-0 left-0 right-0 bottom-0 relative h-screen w-screen bg-slate-400">

@@ -9,7 +9,7 @@ function ListView(props) {
         selectedLocation, 
         onSelectItem, 
         onDeselectItem,
-        locationOne
+        locationOne,
     } = props;
 
     //Check Auth Token
@@ -22,8 +22,6 @@ function ListView(props) {
     }
 
     const [open, setOpen] = React.useState(true);
-
-
 
     function onClickItem(id) {
         if (selectedLocation === null) onSelectItem(id);

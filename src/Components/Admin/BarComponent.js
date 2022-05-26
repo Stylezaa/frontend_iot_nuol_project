@@ -14,7 +14,7 @@ export default function BarComponent() {
     }
   };
 
-  console.log(profile)
+  // console.log(profile)
 
   React.useEffect(() => {
     getProfile();

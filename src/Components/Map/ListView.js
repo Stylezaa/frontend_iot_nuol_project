@@ -67,9 +67,9 @@ function ListView(props) {
                         <h6 className="uppercase">{name}</h6>
                     </div>
                     <div className="flex flex-col">
-                        <p className="text-right">{pH.toFixed(2)}</p> {/* {pH.toFixed(2)} */}
-                        <p className="text-right">{DO.toFixed(2)} mg/L</p>
-                        <p className="text-right">{EC.toFixed(2)} μS/c m</p>
+                        <p className="text-right font-semibold">{pH.toFixed(2)}</p> {/* {pH.toFixed(2)} */}
+                        <p className="text-right font-semibold">{DO.toFixed(2)} mg/L</p>
+                        <p className="text-right font-semibold">{EC.toFixed(2)} μS/c m</p>
                     </div>
                 </div>
             </div>

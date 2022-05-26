@@ -49,7 +49,7 @@ export default function SidebarComponent() {
         </div>
         <ul className="pt-6">
           {Menus.map((Menu, index) => (
-            <a href={Menu.url}>
+            <a href={Menu.url} key={index}>
               <li
                 key={index}
                 className={`text-gray-50 transition ease-in-out duration-200 flex items-center gap-x-4 cursor-pointer border-b border-slate-200 p-2 hover:bg-blue-600 hover:text-white ${
@@ -58,7 +58,7 @@ export default function SidebarComponent() {
               >
                 <img
                   src={require(`../../assets/icon/${Menu.icon}.svg`)}
-                  alt="${Menu.icon}"
+                  alt={`${Menu.icon}`}
                   className="w-7"
                 />
                 <span

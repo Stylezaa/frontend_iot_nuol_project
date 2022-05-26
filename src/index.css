@@ -16,8 +16,8 @@
     }
 }
 
-html, body, ul, li, span, p, a, h1, h2, h3, h4, h5, h6 {
-    font-family: "NotoSanLight" !important;
+* {
+    font-family: "NotoSanLight", sans-serif !important;
 }
 
 .leaflet-marker-icon:before {

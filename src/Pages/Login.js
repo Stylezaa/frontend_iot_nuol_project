@@ -79,11 +79,11 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar className="bg-blue-500" sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            Login
+          <Typography className="font-semibold" component="h1" variant="h5">
+            Water MNS
           </Typography>
           <Box
             component="form"
@@ -120,14 +120,14 @@ export default function SignIn() {
               class="bg-blue-600 hover:bg-blue-700 w-full px-5 py-2 rounded text-white font-semibold"
               sx={{ mt: 3, mb: 2 }}
             >
-              Login
+              ເຂົ້າສູ່ລະບົບ
             </Button>
           </Box>
         </Box>
         <Copyright sx={{ mt: 4, mb: 4 }} />
         <div class="text-center">
           <Link class="ease-out duration-300 hover:text-blue-700 font-semibold underline"color="inherit" href="/">
-            {"<"} Back to Home
+            {"<"} ກັບໄປໜ້າຫຼັກ
           </Link>
         </div>
       </Container>

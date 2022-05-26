@@ -42,7 +42,7 @@ function DetailsView(props) {
             <div className={`${open ? 'hidden lg:block': 'block'} mt-3 w-full`}>
                 <BarDataComponent />
             </div>
-            <div className={`${open ? 'hidden lg:block': 'block'} mt-3 w-full`}>
+            <div className={`${open ? 'hidden lg:block': 'block'} mx-auto mt-3 w-full`}>
                 <DataGridComponent 
                     GridHeight={500}
                     pHWidth={60} 

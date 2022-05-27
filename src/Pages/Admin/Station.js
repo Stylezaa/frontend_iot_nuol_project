@@ -23,7 +23,7 @@ export default function DashboardContent() {
           </div>
         </div>
         <div className="container mx-auto text-center mt-24 lg:px-5">
-          <iframe className="rounded hidden lg:block" width="100%"  height="600px" src="http://202.137.130.47:1880/#flow/03c9ea59963c8365" title="Node-Red" allowFullScreen="true">
+          <iframe className="rounded hidden lg:block" width="100%"  height="600px" src="http://202.137.130.47:1880/#flow/03c9ea59963c8365" title="Node-Red" allowFullScreen>
 					</iframe>
           <span className="lg:hidden w-full shadow-md bg-rose-300 text-white px-4 py-2 rounded-sm">ໜ້ານີ້ສາມາດເບິ່ງໄດ້ສະເພາະໂໝດ Desktop ເທົ່ານັ້ນ</span>
         </div>

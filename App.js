@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import ReactGa from 'react-ga';
+import ReactGA from 'react-ga';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PrivateRoute from './Guard/auth';
 import MapComponent from './Components/Map/MapComponent';
@@ -10,10 +10,10 @@ import Login from './Pages/Login'
 function App() {
 
     useEffect(() =>{
-        ReactGa.initialize('G-EL6NPG0LVM')
+        ReactGA.initialize('G-0E095421TT')
     
         //to report page view
-        ReactGa.pageview(window.location.pathname + window.location.search);
+        ReactGA.pageview('/');
     }, [])
 
   return (

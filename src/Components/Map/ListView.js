@@ -2,6 +2,7 @@ import React from 'react';
 import ProfileControl from '../Admin/profileControl'
 import AboutPopup from '../AboutPopup'
 import StatusComponent from '../Admin/StatusComponent'
+import InfoComponent from '../InfoComponent'
 
 const totalKeyArray = ['pH', 'DO', 'EC'];
 
@@ -12,7 +13,6 @@ function ListView(props) {
         onSelectItem, 
         onDeselectItem,
         locationOne,
-        setPopup
     } = props;
 
     //Check Auth Token
@@ -27,9 +27,8 @@ function ListView(props) {
     const [Deskopen, setDeskOpen] = React.useState(true);
     const [Mobileopen, setMobileOpen] = React.useState(false);
 
-    const [info, setInfo] = React.useState(false);
-    console.log(info)
-    console.log(setPopup)
+    const [infoAbout, setInfoAbout] = React.useState(false);
+    const [infoSensor, setInfoSensor] = React.useState(false)
 
     function onClickItem(id) {
         if (selectedLocation === null) onSelectItem(id);
@@ -45,7 +44,11 @@ function ListView(props) {
         const sumData = sum/locationArray.length
         
         return (
-            <div key={key} className="bg-blue-500 rounded-sm add_unit">
+            <div key={key} className="bg-blue-500 rounded-sm add_unit relative">
+                <svg onClick={() => setInfoSensor(!infoSensor)}
+                    className={`bi bi-info-circle-fill z-50 ease-in-out duration-300 bi bi-chevron-double-right absolute cursor-pointer top-1 right-1 w-4 h-4 font-medium`} style={{color: "#FFF", borderColor: "#000"}} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
                 <div className="flex flex-row justify-center items-center px-2 py-5">
                     <h6 className="text-sm text-white">{key}</h6>
                     <p className="ml-2 text-right text-sm sm:text-xl font-semibold text-white">{sumData.toFixed(2)}</p>
@@ -86,10 +89,19 @@ function ListView(props) {
 
     return (
         <>
-            { info 
+            { infoAbout 
                 ?
                 <>
                     <AboutPopup />
+                </>
+                :
+                null
+            }
+
+            { infoSensor 
+                ?
+                <>
+                    <InfoComponent />
                 </>
                 :
                 null
@@ -109,7 +121,7 @@ function ListView(props) {
                     >
                         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
                 </svg>
-                <svg onClick={() => setInfo(!info)}
+                <svg onClick={() => setInfoAbout(!infoAbout)}
                     className={`bi bi-info-circle-fill z-50 ease-in-out duration-300 bi bi-chevron-double-right shadow-lg absolute cursor-pointer rounded-r -right-10 top-16 mt-[13px] w-10 p-2 font-medium border-2 bg-black`} style={{color: "#FFF", borderColor: "#000"}} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                 </svg>
@@ -159,7 +171,7 @@ function ListView(props) {
                     >
                         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
                 </svg>
-                <svg onClick={() => setInfo(!info)}
+                <svg onClick={() => setInfoAbout(!infoAbout)}
                     className={`bi bi-info-circle-fill z-50 ease-in-out duration-300 bi bi-chevron-double-right shadow-lg absolute cursor-pointer rounded-r -right-10 top-16 mt-[13px] w-10 p-2 font-medium border-2 bg-black`} style={{color: "#FFF", borderColor: "#000"}} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                 </svg>

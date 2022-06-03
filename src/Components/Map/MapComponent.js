@@ -5,7 +5,6 @@ import Axios from 'axios';
 import ListView from './ListView';
 import DetailsView from './DetailsView';
 import ProfileComponent from '../ProfileComponent';
-import AboutPopup from '../AboutPopup'
 
 const api = 'https://ceit-iot-api.herokuapp.com/api/sensor/1/get/all';
 
@@ -15,7 +14,6 @@ function MapComponent() {
 	const [selectedLocation, setSelectedLocation] = useState(null);
 	const [mapCenter, setMapCenter]= useState([17.938568, 102.625921]);
 	const [loading, setLoading] = useState(true)
-	const [Popup, setPopup] = useState(false)
 
 	
 	function sortedLocationArray(locations) {
@@ -109,7 +107,6 @@ function MapComponent() {
 	} else {
 		return (
 			<div className="App">
-				{/* <AboutPopup /> */}
 				<ProfileComponent />
 				<ListView 
 					locationArray={locationArray}

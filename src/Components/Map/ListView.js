@@ -1,5 +1,7 @@
 import React from 'react';
 import ProfileControl from '../Admin/profileControl'
+import AboutPopup from '../AboutPopup'
+import StatusComponent from '../Admin/StatusComponent'
 
 const totalKeyArray = ['pH', 'DO', 'EC'];
 
@@ -10,6 +12,7 @@ function ListView(props) {
         onSelectItem, 
         onDeselectItem,
         locationOne,
+        setPopup
     } = props;
 
     //Check Auth Token
@@ -23,6 +26,10 @@ function ListView(props) {
 
     const [Deskopen, setDeskOpen] = React.useState(true);
     const [Mobileopen, setMobileOpen] = React.useState(false);
+
+    const [info, setInfo] = React.useState(false);
+    console.log(info)
+    console.log(setPopup)
 
     function onClickItem(id) {
         if (selectedLocation === null) onSelectItem(id);
@@ -64,7 +71,8 @@ function ListView(props) {
             <div key={`${id}-${name}`} className={locationClass} onClick={() => onClickItem(id)}>
                 <div className="grid grid-cols-1 sm:grid-cols-2">
                     <div>
-                        <h6 className="uppercase">{name}</h6>
+                        <h6 className="uppercase mb-2">{name}</h6>
+                        <StatusComponent />
                     </div>
                     <div className="flex flex-col">
                         <p className="text-right font-semibold">{pH.toFixed(2)}</p> {/* {pH.toFixed(2)} */}
@@ -78,6 +86,15 @@ function ListView(props) {
 
     return (
         <>
+            { info 
+                ?
+                <>
+                    <AboutPopup />
+                </>
+                :
+                null
+            }
+
             {/* ===== On Desktop Version ===== */}
             <div className={`ease-in-out duration-300 ${Deskopen ? 'w-4/5 sm:w-auto': 'w-0'} bg-white hidden lg:flex flex-col fixed top-0 bottom-0 left-0 z-30`}>
                 <svg
@@ -91,6 +108,10 @@ function ListView(props) {
                     style={{color: "#FFF", borderColor: "#1e3a8a"}}
                     >
                         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                </svg>
+                <svg onClick={() => setInfo(!info)}
+                    className={`bi bi-info-circle-fill z-50 ease-in-out duration-300 bi bi-chevron-double-right shadow-lg absolute cursor-pointer rounded-r -right-10 top-16 mt-[13px] w-10 p-2 font-medium border-2 bg-black`} style={{color: "#FFF", borderColor: "#000"}} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                 </svg>
                 {isAuth
                     ? 
@@ -138,10 +159,14 @@ function ListView(props) {
                     >
                         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
                 </svg>
+                <svg onClick={() => setInfo(!info)}
+                    className={`bi bi-info-circle-fill z-50 ease-in-out duration-300 bi bi-chevron-double-right shadow-lg absolute cursor-pointer rounded-r -right-10 top-16 mt-[13px] w-10 p-2 font-medium border-2 bg-black`} style={{color: "#FFF", borderColor: "#000"}} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
                 {isAuth
                     ? 
                     <>          
-                        <div className="lg:hidden border absolute cursor-pointer rounded-r -right-16 p-0 m-0 top-20 w-16 h-12 font-medium bg-white">
+                        <div className="lg:hidden border absolute cursor-pointer rounded-r -right-16 p-0 m-0 top-28 mt-2 w-16 h-12 font-medium bg-white">
                             <ProfileControl link="/dashboard/overview" title="ໜ້າຈັດການລະບົບ" />
                         </div>        
                     </>

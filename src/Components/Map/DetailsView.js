@@ -1,7 +1,9 @@
 import React from 'react';
 import BarDataComponent from '../Chart/BarDataComponent'
 import DataGridComponent from '../DataGridComponent'
-import InfoComponent from '../InfoComponent'
+import InfoPHComponent from '../Info/InfoPHComponent'
+import InfoDOComponent from '../Info/InfoDOComponent'
+import InfoECComponent from '../Info/InfoECComponent'
 
 const totalKeyArray = ['pH', 'DO', 'EC'];
 
@@ -13,14 +15,18 @@ function DetailsView(props) {
 
     const [open, setOpen] = React.useState(true);
     const [infoSensor, setInfoSensor] = React.useState(false)
+    const [infoData, setInfoData] = React.useState(false)
 
     const totalElements = totalKeyArray.map(key => {
         const count = sensor[key];
 
         return (
             <div key={key} className="bg-blue-500 rounded-sm add_unit relative">
-                <svg onClick={() => setInfoSensor(!infoSensor)}
-                    className={`bi bi-info-circle-fill z-50 ease-in-out duration-300 bi bi-chevron-double-right absolute cursor-pointer top-1 right-1 w-4 h-4 font-medium`} style={{color: "#FFF", borderColor: "#000"}} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <svg onClick={() => {
+                    setInfoSensor(!infoSensor)
+                    setInfoData(key)
+                }}
+                    className={`bi bi-info-circle-fill z-50 ease-in-out duration-300 bi bi-chevron-double-right absolute cursor-pointer top-1 right-1 w-3.5 font-medium`} style={{color: "#FFF", borderColor: "#000"}} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                 </svg>
                 <div className="flex flex-row justify-center items-center px-2 py-5">
@@ -30,17 +36,27 @@ function DetailsView(props) {
             </div>
         );
     });
+
+    let infoCom;
+    if (infoData === "pH") {
+        infoCom = <InfoPHComponent />;
+    } else if (infoData === "EC") {
+        infoCom = <InfoECComponent />;
+    } else {
+        infoCom = <InfoDOComponent />;
+    }
     
     return (
         <>
             { infoSensor 
                 ?
                 <>
-                    <InfoComponent />
+                    {infoCom}
                 </>
                 :
                 null
             }
+
             <div className={`bg-white shadow-lg rounded fixed left-4 right-4 bottom-0 ${open ? 'top-[68%]': ' top-1/2'} top:0 lg:w-auto lg:fixed lg:top-0 lg:right-0 lg:left-2/3 lg:bottom-0 z-40 overflow-y-auto`}>
                 <div className="bg-blue-500 w-full flex justify-between items-center">
                     <h4 className="text-white font-lg font-semibold p-2 uppercase">{name}</h4>

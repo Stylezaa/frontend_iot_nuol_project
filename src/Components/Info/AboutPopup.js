@@ -10,7 +10,7 @@ function AboutPopup() {
           <div className="ease-in-out duration-300 text-center justify-items-center items-center mx-auto shadow-md rounded-sm fixed inset-x-0 top-24 w-11/12 h-fit lg:w-1/3 z-50">
             <header className="w-full bg-black rounded-t w-full flex justify-between items-center h-12">
               <div className="w-[90%]">
-                <h1 className="text-white font-semibold">About Us</h1>
+                <h1 className="text-white ml-14 font-semibold">ກ່ຽວກັບເຮົາ</h1>
               </div>
               <div className="w-[10%]">
                 <span onClick={() => setClosebtn(!closebtn)} className="text-3xl cursor-pointer text-white lg:px-4">&times;</span>

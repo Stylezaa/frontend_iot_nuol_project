@@ -25,7 +25,7 @@ export default function DashboardContent() {
           </div>
         </div>
         <div className="container mx-auto px-5">
-          <NumberDataComponent />
+          {/* <NumberDataComponent /> */}
           <DataGridComponent 
             GridHeight={405}
             pHWidth={200} 

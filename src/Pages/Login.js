@@ -127,7 +127,7 @@ export default function SignIn() {
         <Copyright sx={{ mt: 4, mb: 4 }} />
         <div class="text-center">
           <Link class="ease-out duration-300 hover:text-blue-700 font-semibold underline"color="inherit" href="/">
-            {"<"} ກັບໄປໜ້າຫຼັກ
+            ກັບໄປໜ້າຫຼັກ
           </Link>
         </div>
       </Container>

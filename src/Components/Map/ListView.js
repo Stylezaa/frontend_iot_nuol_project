@@ -1,8 +1,10 @@
 import React from 'react';
 import ProfileControl from '../Admin/profileControl'
-import AboutPopup from '../AboutPopup'
+import AboutPopup from '../Info/AboutPopup'
 import StatusComponent from '../Admin/StatusComponent'
-import InfoComponent from '../InfoComponent'
+import InfoPHComponent from '../Info/InfoPHComponent'
+import InfoDOComponent from '../Info/InfoDOComponent'
+import InfoECComponent from '../Info/InfoECComponent'
 
 const totalKeyArray = ['pH', 'DO', 'EC'];
 
@@ -29,6 +31,7 @@ function ListView(props) {
 
     const [infoAbout, setInfoAbout] = React.useState(false);
     const [infoSensor, setInfoSensor] = React.useState(false)
+    const [infoData, setInfoData] = React.useState(false)
 
     function onClickItem(id) {
         if (selectedLocation === null) onSelectItem(id);
@@ -45,8 +48,11 @@ function ListView(props) {
         
         return (
             <div key={key} className="bg-blue-500 rounded-sm add_unit relative">
-                <svg onClick={() => setInfoSensor(!infoSensor)}
-                    className={`bi bi-info-circle-fill z-50 ease-in-out duration-300 bi bi-chevron-double-right absolute cursor-pointer top-1 right-1 w-4 h-4 font-medium`} style={{color: "#FFF", borderColor: "#000"}} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <svg onClick={() => {
+                    setInfoSensor(!infoSensor)
+                    setInfoData(key)
+                }}
+                    className={`bi bi-info-circle-fill z-50 ease-in-out duration-300 bi bi-chevron-double-right absolute cursor-pointer top-1 right-1 w-3.5 font-medium`} style={{color: "#FFF", borderColor: "#000"}} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                 </svg>
                 <div className="flex flex-row justify-center items-center px-2 py-5">
@@ -87,6 +93,15 @@ function ListView(props) {
         );
     });
 
+    let infoCom;
+    if (infoData === "pH") {
+        infoCom = <InfoPHComponent />;
+    } else if (infoData === "EC") {
+        infoCom = <InfoECComponent />;
+    } else {
+        infoCom = <InfoDOComponent />;
+    }
+
     return (
         <>
             { infoAbout 
@@ -101,7 +116,7 @@ function ListView(props) {
             { infoSensor 
                 ?
                 <>
-                    <InfoComponent />
+                    {infoCom}
                 </>
                 :
                 null

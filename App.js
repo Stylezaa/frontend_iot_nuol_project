@@ -19,20 +19,20 @@ function App() {
   return (
     <>
         <Router>
-                <Switch>
-                    <Route path="/" exact>
-                        <MapComponent />
-                    </Route>
-                    <PrivateRoute path="/dashboard/overview" exact>
-                        <Overview />
-                    </PrivateRoute>
-                    <PrivateRoute path="/dashboard/station" exact>
-                        <Station />
-                    </PrivateRoute>
-                    <Route path="/login" exact>
-                        <Login />
-                    </Route>
-                </Switch>
+            <Switch>
+                <Route path="/" exact>
+                    <MapComponent />
+                </Route>
+                <PrivateRoute path="/dashboard/overview" exact>
+                    <Overview />
+                </PrivateRoute>
+                <PrivateRoute path="/dashboard/station" exact>
+                    <Station />
+                </PrivateRoute>
+                <Route path="/login" exact>
+                    <Login />
+                </Route>
+            </Switch>
         </Router>,
     </>
   );

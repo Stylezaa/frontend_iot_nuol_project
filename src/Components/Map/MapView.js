@@ -4,7 +4,7 @@ import { divIcon } from 'leaflet';
 
 const icons = {
 	xxLarge: divIcon({className: 
-        'border-2 border-solid rounded-full bg-blue-300/60 border-blue-500',
+        'border-2 border-solid rounded-full bg-blue-300/60 border-blue-500 animate-ping',
          iconSize: [96, 96]})
 };
 

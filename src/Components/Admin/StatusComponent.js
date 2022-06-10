@@ -4,12 +4,12 @@ import axios from 'axios';
 function StatusComponent() {
 
   const [status, setStatus] = React.useState([]);
-  // console.log(status);
+  console.log(status);
 
     const getStatus = async () => {
         try {
           const resp = await axios.get('https://ceit-iot-api.herokuapp.com/api/station/1/filter/1');
-          setStatus(resp.data.station_status);
+          setStatus(resp.data.station_status[0].status);
         } catch (error) {
           console.log(error)
         }

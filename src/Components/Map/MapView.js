@@ -4,7 +4,7 @@ import { divIcon } from 'leaflet';
 
 const icons = {
 	xxLarge: divIcon({className: 
-        'border-2 border-solid rounded-full bg-blue-300/60 border-blue-500 animate-ping',
+        'border-2 border-solid rounded-full bg-blue-300/60 border-blue-500',
          iconSize: [96, 96]})
 };
 
@@ -21,10 +21,10 @@ function MapView(props) {
 
         return (
             <Marker 
-                key={`${id}-${name}`} 
-                position={[latitude, longitude]}
-                icon={markerIcon} 
-                eventHandlers={{click: () => onSelectMarker(id)}} >
+            key={`${id}-${name}`} 
+            position={[latitude, longitude]}
+            icon={markerIcon} 
+            eventHandlers={{click: () => onSelectMarker(id)}} >
                 <Popup>{name}</Popup>
             </Marker>
         );

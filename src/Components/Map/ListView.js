@@ -69,7 +69,7 @@ function ListView(props) {
             sensor: { pH, DO, EC }
         } = location;
 
-        let locationClass = 'bg-white p-5 cursor-pointer border border-solid border-gray-100 my-2 shadow-md hover:bg-gray-200';
+        let locationClass = 'bg-white p-5 cursor-pointer my-2 shadow hover:bg-gray-200 mx-2 rounded';
         if (selectedLocation !== null) {
             if (location.id === selectedLocation.id) {
                 locationClass += ' selected';
@@ -84,7 +84,7 @@ function ListView(props) {
                         <StatusComponent />
                     </div>
                     <div className="flex flex-col">
-                        <p className="text-right font-semibold">{pH.toFixed(2)}</p> {/* {pH.toFixed(2)} */}
+                        <p className="text-right font-semibold">{pH.toFixed(2)}</p>
                         <p className="text-right font-semibold">{DO.toFixed(2)} mg/L</p>
                         <p className="text-right font-semibold">{EC.toFixed(2)} μS/c m</p>
                     </div>
@@ -158,15 +158,15 @@ function ListView(props) {
                     </>
                 }
                 <a href="/" className={`${Deskopen ? 'block': 'hidden'} bg-blue-500	border-b border-solid border-gray-400 shrink-0 text-white text-center text-lg font-semibold p-5 w-full`}>Water MNS</a>
-                <div className={`${Deskopen ? 'block': 'hidden'} bg-white border-b border-solid border-gray-400 shrink-0 px-2 py-5 shadow-md`}>
+                <div className={`${Deskopen ? 'block': 'hidden'} bg-white border-b border-solid border-gray-200 shrink-0 px-2 py-5 shadow-md`}>
                     <h2 className="font-semibold uppercase">ຄ່າສະເລ່ຍ ({locationArray.length}) Station 1</h2>
                     <div className="grid grid-cols-3 mt-3 gap-x-1">
                         {totalElements}
                     </div>
                 </div>  
-                <div className="bg-slate-50 border-b border-solid border-gray-400 grow relative overflow-y-auto">
-                    <div className="bg-blue-800 text-center p-4">
-                        <h4 className="text-white font-lg font-semibold uppercase">ລາຍການອຸປະກອນ</h4>
+                <div className="bg-slate-100 border-b border-solid border-gray-400 grow relative overflow-y-auto">
+                    <div className="bg-slate-100 text-center p-2">
+                        <h4 className="text-black font-lg font-semibold uppercase">ລາຍການອຸປະກອນ</h4>
                     </div>
                     {locationElements}
                 </div>
@@ -208,15 +208,15 @@ function ListView(props) {
                     </>
                 }
                 <a href="/" className={`${Mobileopen ? 'block': 'hidden'} bg-blue-500	border-b border-solid border-gray-400 shrink-0 text-white text-center text-lg font-semibold p-5 w-full`}>Water MNS</a>
-                <div className={`${Mobileopen ? 'block': 'hidden'} bg-white border-b border-solid border-gray-400 shrink-0 px-2 py-5 shadow-md`}>
+                <div className={`${Mobileopen ? 'block': 'hidden'} bg-white border-b border-solid border-gray-200 shrink-0 px-2 py-5 shadow-md`}>
                     <h2 className="font-semibold uppercase">ຄ່າສະເລ່ຍ ({locationArray.length}) Station 1</h2>
                     <div className="grid grid-cols-3 mt-3 gap-x-1">
                         {totalElements}
                     </div>
                 </div>  
                 <div className="bg-slate-50 border-b border-solid border-gray-400 grow relative overflow-y-auto">
-                    <div className="bg-blue-800 text-center p-4">
-                        <h4 className="text-white font-lg font-semibold uppercase">ລາຍການອຸປະກອນ</h4>
+                    <div className="bg-slate-50 text-center p-4">
+                        <h4 className="text-black font-lg font-semibold uppercase">ລາຍການອຸປະກອນ</h4>
                     </div>
                     {locationElements}
                 </div>

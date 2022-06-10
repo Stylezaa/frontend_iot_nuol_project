@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function SidebarComponent() {
 
@@ -47,15 +48,11 @@ export default function SidebarComponent() {
             Water MNS
           </h1>
         </div>
-        <ul className="pt-6">
+        <div className="pt-6">
           {Menus.map((Menu, index) => (
-            <a href={Menu.url} key={index}>
-              <li
-                key={index}
-                className={`text-gray-50 transition ease-in-out duration-200 flex items-center gap-x-4 cursor-pointer border-b border-slate-200 p-2 hover:bg-blue-600 hover:text-white ${
-                  Menu.gap ? 'mt-4' : 'mt-2'
-                } ${index === 0 && 'bg-light-white'}`}
-              >
+            <NavLink key={index} className={`text-gray-50 transition ease-in-out duration-200 flex items-center gap-x-4 cursor-pointer border-b border-slate-200 p-2 hover:bg-blue-600 hover:text-white ${
+              Menu.gap ? 'mt-4' : 'mt-2'
+            } ${index === 0 && 'bg-light-white'}`} to={Menu.url} activeStyle={{backgroundColor:"#2563eb"}}>
                 <img
                   src={require(`../../assets/icon/${Menu.icon}.svg`)}
                   alt={`${Menu.icon}`}
@@ -68,10 +65,10 @@ export default function SidebarComponent() {
                 >
                   {Menu.title}
                 </span>
-              </li>
-            </a>
+            </NavLink>
           ))}
-        </ul>
+        </div>
+        
       </div>
     </>
   );

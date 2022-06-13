@@ -21,9 +21,9 @@ function NavbarMobileComponent() {
                             <img
                             src={require(`../../assets/icon/${Menu.icon}.svg`)}
                             alt={`${Menu.icon}`}
-                            className="w-8"
+                            className="w-6"
                             />
-                            <span>{Menu.title}</span>
+                            <span className="text-sm">{Menu.title}</span>
                         </NavLink>
                 ))}
                 </div>

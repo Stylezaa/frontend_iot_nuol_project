@@ -6,14 +6,14 @@ import MapComponent from './Components/Map/MapComponent';
 import Overview from './Pages/Admin/Overviews'
 import Station from './Pages/Admin/Station'
 import Login from './Pages/Login'
+const TRACKING_ID = "UA-230584004-1"; // OUR_TRACKING_ID
+
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
 
     useEffect(() =>{
-        ReactGA.initialize('G-0E095421TT')
-    
-        //to report page view
-        ReactGA.pageview('/');
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }, [])
 
   return (

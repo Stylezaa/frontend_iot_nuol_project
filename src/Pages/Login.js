@@ -83,7 +83,7 @@ export default function SignIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography className="font-semibold" component="h1" variant="h5">
-            Water MNS
+            AQUATIC INDEX
           </Typography>
           <Box
             component="form"

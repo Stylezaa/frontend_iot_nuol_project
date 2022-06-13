@@ -3,21 +3,24 @@ import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leafl
 import { divIcon } from 'leaflet';
 
 const icons = {
-	xxLarge: divIcon({className: 
+	OnlineIcon: divIcon({className: 
         'animate-pulse duration-300 border-2 border-solid rounded-full bg-blue-300/60 border-blue-500 after:absolute after:bg-blue-500 after:rounded-full after:animate-ping after:w-full after:h-full',
-         iconSize: [96, 96]})
+         iconSize: [96, 96]}),
+    OfflineIcon: divIcon({className: 
+        'animate-pulse duration-300 border-2 border-solid rounded-full bg-red-300/60 border-red-500 after:absolute after:bg-red-500 after:rounded-full after:animate-ping after:w-full after:h-full',
+         iconSize: [96, 96]}),
 };
 
 function MapView(props) {
     const { locationOne, mapCenter, onSelectMarker } = props;
- 
+
     const markerElements = locationOne.map(location => {
         const {
             id, name,
             coordinates: { latitude, longitude },
         } = location;
 
-        let markerIcon = icons.xxLarge;
+        let markerIcon = icons.OnlineIcon;
 
         return (
             <Marker 

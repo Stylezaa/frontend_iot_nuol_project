@@ -157,7 +157,9 @@ function ListView(props) {
                         </a>     
                     </>
                 }
-                <a href="/" className={`${Deskopen ? 'block': 'hidden'} bg-blue-500	border-b border-solid border-gray-400 shrink-0 text-white text-center text-lg font-semibold p-5 w-full`}>Water MNS</a>
+                <a href="/" className={`${Deskopen ? 'block': 'hidden'} bg-blue-500	border-b border-solid border-gray-400 shrink-0 text-white text-center text-lg font-semibold p-5 w-full`}>
+                    AQUATIC INDEX
+                </a>
                 <div className={`${Deskopen ? 'block': 'hidden'} bg-white border-b border-solid border-gray-200 shrink-0 px-2 py-5 shadow-md`}>
                     <h2 className="font-semibold uppercase">ຄ່າສະເລ່ຍ ({locationArray.length}) Station 1</h2>
                     <div className="grid grid-cols-3 mt-3 gap-x-1">
@@ -207,7 +209,9 @@ function ListView(props) {
                         </a>     
                     </>
                 }
-                <a href="/" className={`${Mobileopen ? 'block': 'hidden'} bg-blue-500	border-b border-solid border-gray-400 shrink-0 text-white text-center text-lg font-semibold p-5 w-full`}>Water MNS</a>
+                <a href="/" className={`${Mobileopen ? 'block': 'hidden'} bg-blue-500	border-b border-solid border-gray-400 shrink-0 text-white text-center text-lg font-semibold p-5 w-full`}>
+                    AQUATIC INDEX
+                </a>
                 <div className={`${Mobileopen ? 'block': 'hidden'} bg-white border-b border-solid border-gray-200 shrink-0 px-2 py-5 shadow-md`}>
                     <h2 className="font-semibold uppercase">ຄ່າສະເລ່ຍ ({locationArray.length}) Station 1</h2>
                     <div className="grid grid-cols-3 mt-3 gap-x-1">

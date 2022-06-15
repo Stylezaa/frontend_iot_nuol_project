@@ -114,9 +114,7 @@ export default function SignIn() {
             />
             <Button
               type="submit"
-              // onSubmit={handleSubmit}
               fullWidth
-              // variant="contained"
               class="bg-blue-600 hover:bg-blue-700 w-full px-5 py-2 rounded text-white font-semibold"
               sx={{ mt: 3, mb: 2 }}
             >

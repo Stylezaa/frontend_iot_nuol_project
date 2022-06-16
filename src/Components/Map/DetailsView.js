@@ -22,7 +22,7 @@ function DetailsView(props) {
 
         return (
             <div key={key} className="bg-blue-500 rounded-sm add_unit relative">
-                <svg onClick={() => {
+                <svg key={key} onClick={() => {
                     setInfoSensor(!infoSensor)
                     setInfoData(key)
                 }}

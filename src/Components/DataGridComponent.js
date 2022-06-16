@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { useDemoData } from '@mui/x-data-grid-generator';
 import {
   DataGrid,
   GridToolbarContainer, 
@@ -92,15 +91,8 @@ const CustomToolbar = (props) => (
 export default function CustomExport(props) {
 
     const {
-    GridHeight, pHWidth, ECWidth, DOWidth, latitudeWidth, longitudeWidth, last_updateWidth
+      GridHeight, pHWidth, ECWidth, DOWidth, latitudeWidth, longitudeWidth, last_updateWidth
     } = props;
-
-    const { data, loading } = useDemoData({
-    dataSet: 'tableData',
-    rowLength: 4,
-    maxColumns: 6,
-    });
-
 
     const [tableData, setTableData] = React.useState([])
 
@@ -149,7 +141,6 @@ export default function CustomExport(props) {
       <DataGrid
         rows={tableData}
         columns={columns}
-        loading={loading}
         localeText={{
           toolbarExport: "ດາວໂຫລດຂໍ້ມູນ"
         }}

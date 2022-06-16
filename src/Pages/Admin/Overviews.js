@@ -6,7 +6,15 @@ import DataGridComponent from '../../Components/DataGridComponent'
 import CurrentTime from '../../Components/CurrentTime'
 import NavbarMobileComponent from '../../Components/Admin/NavbarMobileComponent'
 
+import FilterAdmin from '../../Components/FilterAdmin'
+
 export default function DashboardContent() {
+
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
   return (
     <div className="flex relative">
@@ -20,8 +28,11 @@ export default function DashboardContent() {
             <li className="text-base">/</li>
             <li className="font-medium text-blue-500 uppercase text-base">ພາບລວມ</li>
           </ul>
-          <div className="border border-blue-500 text-blue-500 px-2 py-1 rounded-sm">
-            <CurrentTime />
+          <div className="flex gap-x-3">
+            <FilterAdmin />
+            <div className="flex items-center border border-blue-500 text-blue-500 px-2 py-1 rounded-sm">
+              <CurrentTime />
+            </div>
           </div>
         </div>
         <div className="container mx-auto px-5">

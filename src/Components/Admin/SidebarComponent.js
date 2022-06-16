@@ -6,7 +6,7 @@ export default function SidebarComponent() {
   const [open, setOpen] = React.useState(true);
   const Menus = [
     { title: 'ພາບລວມ', icon: 'overviews', url: '/dashboard/overview' },
-    { title: 'ອຸປະກອນ', icon: 'station', url: '/dashboard/station' },
+    { title: 'ການເຊື່ອມຕໍ່', icon: 'station', url: '/dashboard/station' },
   ];
 
   return (

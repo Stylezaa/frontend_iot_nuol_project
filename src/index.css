@@ -48,6 +48,10 @@
     height: 10px;
 }
 
+.MuiDataGrid-root {
+    border: none !important;
+}
+
 /* Add unit for EC DO */
 @media only screen and (min-width: 640px) {
     .add_unit:nth-child(2) p:after {

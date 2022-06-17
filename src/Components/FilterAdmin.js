@@ -21,7 +21,7 @@ function FilterAdmin() {
                 onChange={handleChange}
                 className="rounded-sm h-10"
                 >
-                <MenuItem value={'station1'}>Station 1</MenuItem>
+                    <MenuItem value={'station1'}>Station 1</MenuItem>
                 </Select>
             </FormControl>
         </>

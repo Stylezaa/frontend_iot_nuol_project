@@ -17,10 +17,11 @@ function InfoECComponent() {
               </div>
             </header>
             <div className="relative overflow-y-auto h-full rounded-b bg-white">
-                <p className="px-5 py-2 text-justify">
-                    ຄ່າໄຟຟ້າບັນຈຸ ( Ec =  Electro Conductivity).
-                    ແມ່ນການນຳກະແສໄຟຟ້າ ເກື່ອ ຫຼື ສານເຄມີອື່ນໆທີລະລາຍໃນນໍ້າ ເຊິ່ງຊ່ວຍໃນການລະບຸຄວາມບໍລິສຸດຂອງນໍ້າ, ເພື່ອໃຫ້ຮູ້ປະລິມານແຮ່ທາດໃນນໍ້າ ແລະ ນໍ້າທີມີຄວາມບໍລິສຸດຫຼາຍຈະມີການຊັກນຳໄຟຟ້າຕໍ່າ. ຄ່າ Ec ແມ່ນມີຄວາມສຳຄັນໃນການບອກວ່າແຮ່ທາດໃນນໍ້ານັ້ນເໜາະສົມກັບການນຳໄປໃຊ້ໃນດ້ານໃດ.
-                </p> 
+                <img
+                  src={require(`../../assets/Info/EC.jpg`)}
+                  alt="EC"
+                  className="w-full"
+                />
             </div>
           </div>
         </>

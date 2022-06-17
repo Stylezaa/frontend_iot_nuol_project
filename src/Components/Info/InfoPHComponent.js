@@ -17,11 +17,11 @@ function InfoPHComponent() {
               </div>
             </header>
             <div className="relative overflow-y-auto h-full rounded-b bg-white">
-                <p className="px-5 py-2 text-justify">
-                    ຄ່າຄວາມເປັນກົດ-ດ່າງ ( pH = potential of hydrogen ).
-                    ແມ່ນຄ່າທີ່ສະແດງປະລິມານຄວາມເຂັ້ມຂຸ້ນຂອງ Hydrogen ion (H+) ຖືກນໍາໃຊ້ເພື່ອບອກຄວາມເປັນກົດ - ເປັນດ່າງ ໃນນໍ້າວ່າມີຫຼາຍ ຫຼື ໜ້ອຍພຽງໃດ ເຊິ່ງຄ່າ pH ຈະຖືກກຳນົດເປັນຕົວເລກທີມີຄ່າເລີມຈາກ 0-14 ເພື່ອສະແດງປະລິມານຄວາມເຂັ້ມຂຸ້ນຂອງ Hydrogen ion (H+) ໃນນໍ້າ.
-                    ດັ່ງນັ້ນ, ຄ່າ pH ຈະມີຂອບເຂດດັ່ງນີ້:
-                </p> 
+                <img
+                  src={require(`../../assets/Info/PH.jpg`)}
+                  alt="PH"
+                  className="w-full"
+                />
             </div>
           </div>
         </>

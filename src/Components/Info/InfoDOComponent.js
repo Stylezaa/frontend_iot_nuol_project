@@ -17,10 +17,11 @@ function InfoDOComponent() {
               </div>
             </header>
             <div className="relative overflow-y-auto h-full rounded-b bg-white">
-                <p className="px-5 py-2 text-justify">
-                    ອອກຊີເຈັນໃນນໍ້າ ( DO = Dissolved oxygen ).
-                    ແມ່ນຈໍານວນຂອງອອກຊີເຈນທີ່ມີຢູ່ໃນນ້ໍາ ເຊິ່ງແຫຼ່ງນ້ໍາໄດ້ຮັບອອກຊີເຈນຈາກບັນຍາກາດແລະຈາກພືດນ້ໍາ. ປະລິມານອອກຊີເຈນທີ່ລະລາຍໃນນ້ຳແມ່ນສາມາດບອກພວກເຮົາກ່ຽວກັບຄຸນນະພາບຂອງແຫຼ່ງນ້ຳນັ້ນ.
-                </p> 
+                <img
+                  src={require(`../../assets/Info/DO.jpg`)}
+                  alt="DO"
+                  className="w-full"
+                />
             </div>
           </div>
         </>

@@ -61,14 +61,6 @@ function DetailsView(props) {
     
     return (
         <>
-            {/* { infoSensor 
-                ?
-                <>
-                    {infoCom}
-                </>
-                :
-                null
-            } */}
             {
                 infoSensorPH
                 ?

@@ -56,7 +56,7 @@ function MapComponent() {
 	if (loading) {
 		return (
 			<>
-				<div className="hidden lg:flex space-x-4 absolute top-0 left-0 right-0 bottom-0 relative h-screen w-screen bg-slate-400">
+				<div className="hidden lg:flex space-x-4 absolute top-0 left-0 right-0 bottom-0 h-screen w-screen bg-slate-400">
 					<div className="absolute left-0 top-0 bottom-0 w-96 bg-slate-300">
 						<div className="animate-pulse flex space-x-4">
 							<div className="flex-1 space-y-6 px-1 my-1">

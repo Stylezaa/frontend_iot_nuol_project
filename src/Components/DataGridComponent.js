@@ -113,7 +113,7 @@ export default function CustomExport(props) {
       }, },
       { field: 'latitude', headerName: 'Latitude', width: latitudeWidth },
       { field: 'longitude', headerName: 'Longitude', width: longitudeWidth },
-      { field: 'last_update', headerName: 'Last update', width: last_updateWidth, valueGetter: (params) => new Date(params.row.last_update).toLocaleString()},
+      { field: 'last_update', headerName: 'Last update', width: last_updateWidth, valueGetter: (params) => new Date(params.row.last_update).toLocaleString('en-US', { timeZone: 'Asia/Jakarta'})},
     ]
 
     const getSensor = async () => {

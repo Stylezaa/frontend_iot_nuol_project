@@ -98,7 +98,7 @@ function MapComponent() {
 		)
 	} else {
 		return (
-			<div className="App">
+			<div className="App absolute">
 				<ProfileComponent />
 				<ListView 
 					locationArray={locationArray}

@@ -51,7 +51,7 @@ function BarDataComponent() {
                 tick={{ fontSize: 16 }}
                 />
                 <YAxis tick={{ fontSize: 16 }} />
-                <Tooltip wrapperStyle={{fontSize: "16px"}} labelFormatter={last_update => new Date(last_update).toLocaleString()} />
+                <Tooltip wrapperStyle={{fontSize: "16px"}} labelFormatter={last_update => new Date(last_update).toLocaleString('en-US', { timeZone: 'Asia/Jakarta'})} />
                 <Legend wrapperStyle={{fontSize: "14px"}} />
                 <Bar dataKey="pH" fill="#3b82f6" />
                 <Bar dataKey="DO" fill="#37C2A4" unit=" mg/L"/>

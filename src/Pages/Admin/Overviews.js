@@ -10,12 +10,6 @@ import FilterAdmin from '../../Components/FilterAdmin'
 
 export default function DashboardContent() {
 
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
   return (
     <div className="flex relative">
       <SidebarComponent />
@@ -23,7 +17,7 @@ export default function DashboardContent() {
       <div className="h-screen flex-1">
         <BarComponent />
         <div className="container mx-auto my-3 px-5 flex justify-end lg:justify-between">
-          <ul className="flex gap-x-2 hidden lg:flex">
+          <ul className="gap-x-2 hidden lg:flex">
             <li className="text-gray-400 uppercase text-base">ໜ້າຈັດການລະບົບ</li>
             <li className="text-base">/</li>
             <li className="font-medium text-blue-500 uppercase text-base">ພາບລວມ</li>

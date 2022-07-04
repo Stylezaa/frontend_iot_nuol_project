@@ -14,26 +14,26 @@ import {
 
 function BarDataComponent() {
 
-    const [BarData, setBarData] = React.useState([]);
+  const [BarData, setBarData] = React.useState([]);
 
-    const getSensor = async () => {
-        try {
-          const resp = await axios.get('https://ceit-iot-api.herokuapp.com/api/chart/1/get/all');
-          setBarData(resp.data.slice(0, 4).reverse());
-        } catch (error) {
-          console.log(error)
-        }
-    };
+  const getSensor = async () => {
+      try {
+        const resp = await axios.get('https://ceit-iot-api.herokuapp.com/api/chart/1/get/all');
+        setBarData(resp.data.slice(0, 4).reverse());
+      } catch (error) {
+        console.log(error)
+      }
+  };
 
-    React.useEffect(() => {
+  React.useEffect(() => {
+      getSensor();
+  
+      const interval = setInterval(() => {
         getSensor();
-    
-        const interval = setInterval(() => {
-          getSensor();
-        }, 10000);
-    
-        return () => clearInterval(interval);
-    }, []);
+      }, 180000);
+  
+      return () => clearInterval(interval);
+  }, []);
   return (
     <span className="text-center text-3xl font-medium text-black bg-white w-full">
         <ResponsiveContainer width="100%" height={300}>
@@ -47,11 +47,11 @@ function BarDataComponent() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis
                 dataKey="last_update"
-                tickFormatter={(unixTime) => moment(unixTime).format('hh:mm:ss')}
+                tickFormatter={(unixTime) => moment(unixTime).parseZone("UTC").format('hh:mm:ss')}
                 tick={{ fontSize: 16 }}
                 />
                 <YAxis tick={{ fontSize: 16 }} />
-                <Tooltip wrapperStyle={{fontSize: "16px"}} labelFormatter={last_update => new Date(last_update).toLocaleString('en-US', { timeZone: 'Asia/Jakarta'})} />
+                <Tooltip wrapperStyle={{fontSize: "16px"}} labelFormatter={(unixTime) => moment(unixTime).parseZone("UTC").format('DD/MM/YYYY HH:mm:ss')} />
                 <Legend wrapperStyle={{fontSize: "14px"}} />
                 <Bar dataKey="pH" fill="#3b82f6" />
                 <Bar dataKey="DO" fill="#37C2A4" unit=" mg/L"/>

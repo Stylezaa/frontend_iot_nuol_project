@@ -1,4 +1,5 @@
 import * as React from 'react';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import {
@@ -64,7 +65,7 @@ const JsonExportMenuItem = (props) => {
         hideMenu?.();
       }}
     >
-      Export JSON
+      Download JSON
     </MenuItem>
   );
 };
@@ -99,39 +100,38 @@ export default function CustomExport(props) {
     const columns = [
       // { field: 'id', headerName: 'ID', width: 0, hidden: 'true'},
       { field: 'pH', headerName: 'pH', width: pHWidth },
+      { field: 'DO', headerName: 'DO', width: DOWidth, valueFormatter: (params) => {
+        if (params.value == null) {
+        return '';
+        }
+        return `${params.value} μS/c m`;
+      }, },
       { field: 'EC', headerName: 'EC', width: ECWidth, valueFormatter: (params) => {
           if (params.value == null) {
           return '';
           }
           return `${params.value} mg/L`;
       }, },
-      { field: 'DO', headerName: 'DO', width: DOWidth, valueFormatter: (params) => {
-          if (params.value == null) {
-          return '';
-          }
-          return `${params.value} μS/c m`;
-      }, },
       { field: 'latitude', headerName: 'Latitude', width: latitudeWidth },
       { field: 'longitude', headerName: 'Longitude', width: longitudeWidth },
-      { field: 'last_update', headerName: 'Last update', width: last_updateWidth, valueGetter: (params) => new Date(params.row.last_update).toLocaleString('en-US', { timeZone: 'Asia/Jakarta'})},
+      { field: 'last_update', headerName: 'Last update', width: last_updateWidth, valueGetter: (last_update) => moment(last_update.row.last_update).parseZone("UTC").format('DD/MM/YYYY HH:mm:ss')},
     ]
 
     const getSensor = async () => {
-    try {
-      const resp = await axios.get('https://ceit-iot-api.herokuapp.com/api/chart/1/get/all');
-      setTableData(resp.data);
-    } catch (error) {
-      console.log(error)
-    }
+      try {
+        const resp = await axios.get('https://ceit-iot-api.herokuapp.com/api/chart/1/get/all');
+        setTableData(resp.data);
+      } catch (error) {
+        console.log(error)
+      }
     };
 
     React.useEffect(() => {
-
         getSensor();
 
         const interval = setInterval(() => {
         getSensor();
-        }, 10000);
+        }, 180000);
 
         return () => clearInterval(interval);
     }, []);

@@ -34,7 +34,7 @@ function MapView(props) {
     
         const interval = setInterval(() => {
           getStatus();
-        }, 10000);
+        }, 180000);
     
         return () => clearInterval(interval);
     }, []);

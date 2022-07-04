@@ -38,7 +38,7 @@ function MapComponent() {
 		setSelectedLocation(null);
 	}, []);
 
-	useEffect(() => {
+	const getSensor = async () => { 
 		Axios.get(api).then(response => {
 			const sortedLocations = sortedLocationArray(response.data);
 			setLocationArray(sortedLocations);
@@ -47,6 +47,16 @@ function MapComponent() {
 		}).catch(error => {
 			console.log(error);
 		})
+	};
+
+	useEffect(() => {
+		getSensor();
+
+		const interval = setInterval(() => {
+			getSensor();
+		}, 180000);
+	
+		return () => clearInterval(interval);
 	}, []);
 
 	let detailsView = null;

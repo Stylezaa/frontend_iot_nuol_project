@@ -23,7 +23,7 @@ function NumberDataComponent() {
 
     const interval = setInterval(() => {
       getSensor();
-    }, 10000);
+    }, 180000);
 
     return () => clearInterval(interval);
   }, []);

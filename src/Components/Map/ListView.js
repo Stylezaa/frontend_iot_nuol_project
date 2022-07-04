@@ -83,7 +83,7 @@ function ListView(props) {
                         <h6 className="uppercase mb-2">{name}</h6>
                         <StatusComponent />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col add_symbols">
                         <p className="text-right font-semibold">{pH.toFixed(2)}</p>
                         <p className="text-right font-semibold">{DO.toFixed(2)} mg/L</p>
                         <p className="text-right font-semibold">{EC.toFixed(2)} μS/c m</p>

@@ -18,7 +18,7 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      <Link class="no-underline hover:text-blue-600" color="inherit" href="https://www.facebook.com/thanusin.pouvongkhamchan/">
+      <Link className="no-underline hover:text-blue-600" color="inherit" href="https://www.facebook.com/thanusin.pouvongkhamchan/">
         Dev by DevSin
       </Link>
     </Typography>
@@ -154,7 +154,7 @@ export default function SignIn() {
             <Button
               type="submit"
               fullWidth
-              class="bg-blue-600 hover:bg-blue-700 w-full px-5 py-2 rounded text-white font-semibold"
+              className="bg-blue-600 hover:bg-blue-700 w-full px-5 py-2 rounded text-white font-semibold"
               sx={{ mt: 3, mb: 2 }}
             >
               ເຂົ້າສູ່ລະບົບ
@@ -162,8 +162,8 @@ export default function SignIn() {
           </Box>
         </Box>
         <Copyright sx={{ mt: 4, mb: 4 }} />
-        <div class="text-center">
-          <Link class="ease-out duration-300 hover:text-blue-700 font-semibold underline"color="inherit" href="/">
+        <div className="text-center">
+          <Link className="ease-out duration-300 hover:text-blue-700 font-semibold underline"color="inherit" href="/">
             ກັບໄປໜ້າຫຼັກ
           </Link>
         </div>

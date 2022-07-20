@@ -16,10 +16,10 @@ export default function BarComponent() {
   };
 
   // console.log(profile)
-
   React.useEffect(() => {
     getProfile();
   }, []);
+
   return (
     <nav className="grid shadow-md px-4 py-2">
       <div className="container mx-auto text-center py-0 my-0 flex gap-x-4 justify-between lg:justify-end">
